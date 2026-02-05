@@ -205,55 +205,170 @@
         </div>
     </section>
 
-    <section class="pricing-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Planes de Suscripción Autorizados</h2>
-                <p>Mínimo 3 meses. Pagos por anticipado. Facturación a tasa oficial BCN.</p>
-            </div>
-            
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Plan</th>
-                            <th>Usuarios</th>
-                            <th>Trimestral (Mínimo)</th>
-                            <th>Semestral (-5%)</th>
-                            <th>Anual (-10%)</th>
-                            <th>Soporte</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Basic</strong></td>
-                            <td>Hasta 2</td>
-                            <td class="price-col">$60.00</td>
-                            <td>$114.00</td>
-                            <td>$216.00</td>
-                            <td>Estándar Remoto</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Professional</strong></td>
-                            <td>Hasta 10</td>
-                            <td class="price-col">$105.00</td>
-                            <td>$199.00</td>
-                            <td>$378.00</td>
-                            <td>Estándar Remoto</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Enterprise</strong></td>
-                            <td>Hasta 50</td>
-                            <td class="price-col">$210.00</td>
-                            <td>$399.00</td>
-                            <td>$756.00</td>
-                            <td>Prioritario</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <style>
+    /* Contenedor de rejilla para los planes */
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 40px;
+    }
+
+    /* Diseño de la Tarjeta */
+    .price-card {
+        background: white;
+        padding: 40px;
+        border-radius: 25px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        border: 1px solid #e2e8f0;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .price-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--blue-accent);
+        box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+    }
+
+    /* Etiqueta de Recomendado */
+    .price-card.featured {
+        border: 2px solid var(--blue-accent);
+        background: #fdfdfd;
+    }
+
+    .featured-label {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--blue-accent);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 50px;
+        font-size: 0.7rem;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+
+    .price-header h3 { font-size: 1.6rem; color: var(--primary); margin-bottom: 5px; }
+    .price-amount { font-size: 2.8rem; font-weight: 800; color: var(--blue-accent); margin-bottom: 20px; }
+    .price-amount span { font-size: 1rem; color: #64748b; font-weight: 400; }
+
+    /* Límites técnicos destacados */
+    .tech-specs {
+        background: #f8fafc;
+        padding: 15px;
+        border-radius: 15px;
+        margin-bottom: 25px;
+        font-size: 0.9rem;
+        border-left: 4px solid var(--blue-accent);
+    }
+
+    .price-features { list-style: none; margin-bottom: 30px; flex-grow: 1; }
+    .price-features li { 
+        margin-bottom: 15px; 
+        font-size: 0.95rem; 
+        display: flex; 
+        align-items: center; 
+        color: var(--text-main);
+    }
+    
+    .price-features li::before { 
+        content: '✓'; 
+        color: var(--green-success); 
+        margin-right: 12px; 
+        font-weight: 900; 
+    }
+
+    /* Ocultar la tabla vieja en móvil totalmente */
+    @media (max-width: 768px) {
+        .table-desktop { display: none; }
+        .pricing-section { padding: 40px 0; }
+    }
+</style>
+
+<section class="pricing-section" id="planes">
+    <div class="container">
+        <div class="section-title" style="text-align: center; margin-bottom: 50px;">
+            <h2 style="font-size: 2.5rem;">Planes de Suscripción</h2>
+            <p style="color: #64748b;">Gestión profesional operada por WEB SOLUTION. Facturación según tasa BCN.</p>
         </div>
-    </section>
+
+        <div class="pricing-grid">
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <h3>Basic</h3>
+                    <div class="price-amount">$60 <span>/ trimestral</span></div>
+                </div>
+                
+                <div class="tech-specs">
+                    • <strong>2</strong> Usuarios Incluidos<br>
+                    • <strong>1</strong> Sucursal / <strong>1</strong> Empresa
+                    • <strong>2</strong> Bodegas <strong>
+
+                </div>
+
+                <ul class="price-features">
+                    <li>Ventas y Facturación</li>
+                    <li>Control de Caja e Inventario</li>
+                    <li>Gestión de Lotes Básica</li>
+                    <li>Soporte vía Ticket</li>
+                </ul>
+                <a href="#diagnostico" class="btn-cta" style="text-align:center;">Seleccionar Basic</a>
+            </div>
+
+            <div class="price-card featured">
+                <div class="featured-label">Más Popular</div>
+                <div class="price-header">
+                    <h3>Professional</h3>
+                    <div class="price-amount">$105 <span>/ trimestral</span></div>
+                </div>
+
+                <div class="tech-specs">
+                    • <strong>10</strong> Usuarios Incluidos<br>
+                    • <strong>3</strong> Sucursales / <strong>1</strong> Empresa
+                    • <strong>3</strong> Bodegas por Sucursal<strong>
+
+                </div>
+
+                <ul class="price-features">
+                    <li><strong>Todo lo del Plan Basic</strong></li>
+                    <li>Control de Vencimientos Pro</li>
+                    <li>Traslados entre Bodegas</li>
+                    <li>Módulo de Cartera (CxC)</li>
+                    <li>Soporte Remoto Estándar</li>
+                </ul>
+                <a href="#diagnostico" class="btn-cta" style="text-align:center;">Seleccionar Pro</a>
+            </div>
+
+            <div class="price-card">
+                <div class="price-header">
+                    <h3>Enterprise</h3>
+                    <div class="price-amount">$210 <span>/ trimestral</span></div>
+                </div>
+
+                <div class="tech-specs">
+                    • <strong>50</strong> Usuarios Incluidos<br>
+                    • <strong>3</strong> Sucursales por Empresa / <strong>5</strong> Empresas
+                    • <strong>5</strong> Bodegas por Sucursal<strong>
+                </div>
+
+                <ul class="price-features">
+                    <li><strong>Todo lo del Plan Professional</strong></li>
+                    <li>Multimoneda Avanzada</li>
+                    <li>Consolidado Multi-RUC</li>
+                    <li>Auditoría de Roles Senior</li>
+                    <li>Soporte Prioritario 24/7</li>
+                </ul>
+                <a href="#diagnostico" class="btn-cta" style="text-align:center;">Seleccionar Enterprise</a>
+            </div>
+
+        </div>
+    </div>
+</section>
 
    <section id="diagnostico" class="container" style="padding: 80px 0;">
     <div class="form-box">
@@ -338,5 +453,5 @@
 });
     </script>
 </body>
-
 </html>
+
