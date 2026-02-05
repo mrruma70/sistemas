@@ -163,7 +163,7 @@
 
     <a href="https://wa.me/50585273135?text=Hola,%20solicito%20información%20sobre%20Facturación%20Fácil" class="wa-float" target="_blank">
         <svg width="35" height="35" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.06 3.973L0 16l4.104-1.076a7.858 7.858 0 0 0 3.888 1.035h.001c4.43 0 8.003-3.557 8.003-7.93a7.88 7.88 0 0 0-2.39-5.611zM7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.06 3.973L0 16l4.104-1.076a7.858 7.858 0 0 0 3.888 1.035h.001c4.43 0 8.003-3.557 8.003-7.93a7.88 7.88 0 0 0-2.39-5.611zM7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
         </svg>
     </a>
 
@@ -231,331 +231,541 @@
     </section>
 
     <style>
-    /* Contenedor de rejilla para los planes */
-    .pricing-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-        margin-top: 40px;
-    }
+        /* Contenedor de rejilla para los planes */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
 
-    /* Diseño de la Tarjeta */
-    .price-card {
-        background: white;
-        padding: 40px;
-        border-radius: 25px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        border: 1px solid #e2e8f0;
-        display: flex;
-        flex-direction: column;
-        transition: all 0.3s ease;
-        position: relative;
-    }
+        /* Diseño de la Tarjeta */
+        .price-card {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            position: relative;
+        }
 
-    .price-card:hover {
-        transform: translateY(-10px);
-        border-color: var(--blue-accent);
-        box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
-    }
+            .price-card:hover {
+                transform: translateY(-10px);
+                border-color: var(--blue-accent);
+                box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+            }
 
-    /* Etiqueta de Recomendado */
-    .price-card.featured {
-        border: 2px solid var(--blue-accent);
-        background: #fdfdfd;
-    }
+            /* Etiqueta de Recomendado */
+            .price-card.featured {
+                border: 2px solid var(--blue-accent);
+                background: #fdfdfd;
+            }
 
-    .featured-label {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: var(--blue-accent);
-        color: white;
-        padding: 5px 15px;
-        border-radius: 50px;
-        font-size: 0.7rem;
-        font-weight: 800;
-        text-transform: uppercase;
-    }
+        .featured-label {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--blue-accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
 
-    .price-header h3 { font-size: 1.6rem; color: var(--primary); margin-bottom: 5px; }
-    .price-amount { font-size: 2.8rem; font-weight: 800; color: var(--blue-accent); margin-bottom: 20px; }
-    .price-amount span { font-size: 1rem; color: #64748b; font-weight: 400; }
+        .price-header h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
 
-    /* Límites técnicos destacados */
-    .tech-specs {
-        background: #f8fafc;
-        padding: 15px;
-        border-radius: 15px;
-        margin-bottom: 25px;
-        font-size: 0.9rem;
-        border-left: 4px solid var(--blue-accent);
-    }
+        .price-amount {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--blue-accent);
+            margin-bottom: 20px;
+        }
 
-    .price-features { list-style: none; margin-bottom: 30px; flex-grow: 1; }
-    .price-features li { 
-        margin-bottom: 15px; 
-        font-size: 0.95rem; 
-        display: flex; 
-        align-items: center; 
-        color: var(--text-main);
-    }
-    
-    .price-features li::before { 
-        content: '✓'; 
-        color: var(--green-success); 
-        margin-right: 12px; 
-        font-weight: 900; 
-    }
+            .price-amount span {
+                font-size: 1rem;
+                color: #64748b;
+                font-weight: 400;
+            }
 
-    /* Ocultar la tabla vieja en móvil totalmente */
-    @media (max-width: 768px) {
-        .table-desktop { display: none; }
-        .pricing-section { padding: 40px 0; }
-    }
-</style>
+        /* Límites técnicos destacados */
+        .tech-specs {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            border-left: 4px solid var(--blue-accent);
+        }
 
-<section class="pricing-section" id="planes">
-    <div class="container">
-        <div class="section-title" style="text-align: center; margin-bottom: 50px;">
-            <h2 style="font-size: 2.5rem;">Planes de Suscripción</h2>
-            <p style="color: #64748b;">Gestión profesional operada por WEB SOLUTION. Facturación según tasa BCN.</p>
+        .price-features {
+            list-style: none;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+            .price-features li {
+                margin-bottom: 15px;
+                font-size: 0.95rem;
+                display: flex;
+                align-items: center;
+                color: var(--text-main);
+            }
+
+                .price-features li::before {
+                    content: '✓';
+                    color: var(--green-success);
+                    margin-right: 12px;
+                    font-weight: 900;
+                }
+
+        /* Ocultar la tabla vieja en móvil totalmente */
+        @media (max-width: 768px) {
+            .table-desktop {
+                display: none;
+            }
+
+            .pricing-section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+
+    <section class="pricing-section" id="planes">
+        <div class="container">
+            <div class="section-title" style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 2.5rem;">Planes de Suscripción</h2>
+                <p style="color: #64748b;">Gestión profesional operada por WEB SOLUTION. Facturación según tasa BCN.</p>
+            </div>
+
+            <div class="pricing-grid">
+
+                <div class="price-card">
+                    <div class="price-header">
+                        <h3>Basic</h3>
+                        <div class="price-amount">$75 <span>/ trimestral</span></div>
+                    </div>
+
+                    <div class="tech-specs">
+                        • <strong>2</strong> Usuarios Incluidos<br>
+                        • <strong>1</strong> Sucursal / <strong>1</strong> Empresa<br>
+                        • <strong>2</strong> Bodegas<br>
+                        • Semestral: <strong>$142.50</strong> | Anual: <strong>$270.00</strong>
+                    </div>
+
+                    <ul class="price-features">
+                        <li>Ventas y Facturación</li>
+                        <li>Control de Caja e Inventario</li>
+                        <li>Gestión de Lotes Básica</li>
+                        <li>Soporte vía Ticket</li>
+                    </ul>
+                    <a href="#diagnostico" class="btn-cta" style="text-align:center;">Seleccionar Basic</a>
+                </div>
+
+                <div class="price-card featured">
+                    <div class="featured-label">Más Popular</div>
+                    <div class="price-header">
+                        <h3>Professional</h3>
+                        <div class="price-amount">$120 <span>/ trimestral</span></div>
+                    </div>
+
+                    <div class="tech-specs">
+                        • <strong>10</strong> Usuarios Incluidos<br>
+                        • <strong>3</strong> Sucursales / <strong>1</strong> Empresa<br>
+                        • <strong>3</strong> Bodegas por Sucursal<br>
+                        • Semestral: <strong>$228.00</strong> | Anual: <strong>$432.00</strong>
+                    </div>
+
+                    <ul class="price-features">
+                        <li><strong>Todo lo del Plan Basic</strong></li>
+                        <li>Control de Vencimientos Pro</li>
+                        <li>Traslados entre Bodegas</li>
+                        <li>Módulo de Cartera (CxC)</li>
+                        <li>Soporte Remoto Estándar</li>
+                    </ul>
+                    <a href="#diagnostico" class="btn-cta" style="text-align:center;">Seleccionar Pro</a>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-header">
+                        <h3>Enterprise</h3>
+                        <div class="price-amount">$240 <span>/ trimestral</span></div>
+                    </div>
+
+                    <div class="tech-specs">
+                        • <strong>50</strong> Usuarios Incluidos<br>
+                        • <strong>3</strong> Sucursales por Empresa / <strong>5</strong> Empresas<br>
+                        • <strong>5</strong> Bodegas por Sucursal<br>
+                        • Semestral: <strong>$456.00</strong> | Anual: <strong>$864.00</strong>
+                    </div>
+
+                    <ul class="price-features">
+                        <li>Todo lo del Professional, multiempresa, multisucursal y multibodega</li>
+                        <li>paneles ejecutivos (ventas, inventario, cartera, auditoría)</li>
+                        <li>Auditoría completa de movimientos</li>
+                        <li>Soporte Prioritario 24/7</li>
+                    </ul>
+                    <a href="#diagnostico" class="btn-cta" style="text-align:center;">Seleccionar Enterprise</a>
+                </div>
+
+            </div>
         </div>
+    </section>
 
-        <div class="pricing-grid">
-            
-            <div class="price-card">
-                <div class="price-header">
-                    <h3>Basic</h3>
-                    <div class="price-amount">$75 <span>/ trimestral</span></div>
-                </div>
-                
-                <div class="tech-specs">
-                    • <strong>2</strong> Usuarios Incluidos<br>
-                    • <strong>1</strong> Sucursal / <strong>1</strong> Empresa<br>
-                    • <strong>2</strong> Bodegas<br>
-                    • Semestral: <strong>$142.50</strong> | Anual: <strong>$270.00</strong>
-                </div>
+    <section style="padding: 60px 0; background-color: var(--white);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
+                <div>
+                    <h2 style="font-size: 2rem; color: var(--primary); margin-bottom: 20px;">Tu Inversión, Tu Información</h2>
+                    <p style="margin-bottom: 15px;">Al suscribirte a <strong>Facturación Fácil</strong> bajo el modelo SaaS, obtienes un servicio "todo incluido" donde nosotros nos encargamos de la infraestructura y tú te enfocas en vender.</p>
 
-                <ul class="price-features">
-                    <li>Ventas y Facturación</li>
-                    <li>Control de Caja e Inventario</li>
-                    <li>Gestión de Lotes Básica</li>
-                    <li>Soporte vía Ticket</li>
-                </ul>
-                <a href="#diagnostico" class="btn-cta" style="text-align:center;">Seleccionar Basic</a>
+                    <div style="display: flex; gap: 15px; margin-top: 25px;">
+                        <div style="color: var(--blue-accent); font-size: 1.5rem;">✔</div>
+                        <div>
+                            <strong>Propiedad de los Datos:</strong> Según la Cláusula 4 de nuestros términos, usted es el único dueño de su información. El sistema es solo el medio para gestionarla.
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <div style="color: var(--blue-accent); font-size: 1.5rem;">✔</div>
+                        <div>
+                            <strong>Continuidad del Negocio:</strong> En caso de finalizar la suscripción, dispondrá de 30 días calendario para exportar su información básica desde la plataforma.
+                        </div>
+                    </div>
+                </div>
+                <div style="background-color: var(--bg-light); padding: 30px; border-radius: 12px; border-left: 5px solid var(--blue-accent);">
+                    <h3 style="margin-bottom: 15px; font-size: 1.2rem;">Requisitos para un óptimo funcionamiento:</h3>
+                    <ul style="list-style: none; font-size: 0.9rem; line-height: 1.8;">
+                        <li>🌐 <strong>Conexión:</strong> Internet estable (Fibra óptica recomendada).</li>
+                        <li>💻 <strong>Hardware:</strong> Procesador i3 o superior y mínimo 8GB de RAM.</li>
+                        <li>🌍 <strong>Navegador:</strong> Versiones actualizadas de Chrome, Edge o Firefox.</li>
+                        <li>⚖️ <strong>Legal:</strong> El suscriptor es responsable de la veracidad de los datos fiscales registrados.</li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="price-card featured">
-                <div class="featured-label">Más Popular</div>
-                <div class="price-header">
-                    <h3>Professional</h3>
-                    <div class="price-amount">$120 <span>/ trimestral</span></div>
-                </div>
-
-                <div class="tech-specs">
-                    • <strong>10</strong> Usuarios Incluidos<br>
-                    • <strong>3</strong> Sucursales / <strong>1</strong> Empresa<br>
-                    • <strong>3</strong> Bodegas por Sucursal<br>
-                    • Semestral: <strong>$228.00</strong> | Anual: <strong>$432.00</strong>
-                </div>
-
-                <ul class="price-features">
-                    <li><strong>Todo lo del Plan Basic</strong></li>
-                    <li>Control de Vencimientos Pro</li>
-                    <li>Traslados entre Bodegas</li>
-                    <li>Módulo de Cartera (CxC)</li>
-                    <li>Soporte Remoto Estándar</li>
-                </ul>
-                <a href="#diagnostico" class="btn-cta" style="text-align:center;">Seleccionar Pro</a>
-            </div>
-
-            <div class="price-card">
-                <div class="price-header">
-                    <h3>Enterprise</h3>
-                    <div class="price-amount">$240 <span>/ trimestral</span></div>
-                </div>
-
-                <div class="tech-specs">
-                    • <strong>50</strong> Usuarios Incluidos<br>
-                    • <strong>3</strong> Sucursales por Empresa / <strong>5</strong> Empresas<br>
-                    • <strong>5</strong> Bodegas por Sucursal<br>
-                    • Semestral: <strong>$456.00</strong> | Anual: <strong>$864.00</strong>
-                </div>
-
-                <ul class="price-features">        
-                    <li>Todo lo del Professional, multiempresa, multisucursal y multibodega</li>
-                    <li>paneles ejecutivos (ventas, inventario, cartera, auditoría)</li>
-                    <li>Auditoría completa de movimientos</li>
-                    <li>Soporte Prioritario 24/7</li>
-                </ul>
-                <a href="#diagnostico" class="btn-cta" style="text-align:center;">Seleccionar Enterprise</a>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
+
+    <section style="padding: 40px 0; background-color: #f1f5f9; border-top: 1px solid #e2e8f0;">
+        <div class="container text-center">
+            <h3 style="margin-bottom: 30px;">Claridad en tu Suscripción</h3>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                <div style="background: white; padding: 20px; border-radius: 8px; width: 250px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                    <span style="color: var(--green-success); font-weight: bold;">● Estado Activo</span>
+                    <p style="font-size: 0.85rem; color: #64748b; mt-2">Acceso total a todas las funciones y soporte técnico.</p>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 8px; width: 250px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                    <span style="color: #f59e0b; font-weight: bold;">● Estado Expirado</span>
+                    <p style="font-size: 0.85rem; color: #64748b; mt-2">Por falta de pago, el sistema entra en <strong>Modo Solo Lectura</strong> para que no pierdas acceso a tus reportes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 60px 0; background-color: var(--bg-light);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 style="color: var(--primary); font-weight: 800;">Servicios de Implementación</h2>
+                <p style="color: var(--blue-accent); font-weight: 600;">Aseguramos que tu sistema rinda al 100% desde el primer día</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+                <div style="background: white; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <h4 style="font-size: 1.1rem; border-bottom: 2px solid #cbd5e1; padding-bottom: 10px; margin-bottom: 15px;">Plan Basic</h4>
+                    <ul style="list-style: none; font-size: 0.9rem; color: #64748b; padding: 0;">
+                        <li style="margin-bottom: 10px;">• Configuración inicial de empresa e impuestos.</li>
+                        <li style="margin-bottom: 10px;">• 1 a 2 sesiones de capacitación (Caja y Facturación).</li>
+                    </ul>
+                    <p style="margin-top: 20px; font-weight: bold; color: var(--primary);">Inversión: 80 – 120 USD*</p>
+                </div>
+
+                <div style="background: white; padding: 25px; border-radius: 12px; border: 2px solid var(--blue-accent);">
+                    <h4 style="font-size: 1.1rem; border-bottom: 2px solid var(--blue-accent); padding-bottom: 10px; margin-bottom: 15px;">Plan Professional</h4>
+                    <ul style="list-style: none; font-size: 0.9rem; color: #64748b; padding: 0;">
+                        <li style="margin-bottom: 10px;">• Configuración de bodegas, productos y créditos.</li>
+                        <li style="margin-bottom: 10px;">• Capacitación a cajeros, inventario y cobranza.</li>
+                        <li style="margin-bottom: 10px;">• Acompañamiento en el primer cierre de mes.</li>
+                    </ul>
+                    <p style="margin-top: 20px; font-weight: bold; color: var(--blue-accent);">Inversión: 150 – 250 USD*</p>
+                </div>
+
+                <div style="background: white; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    <h4 style="font-size: 1.1rem; border-bottom: 2px solid #cbd5e1; padding-bottom: 10px; margin-bottom: 15px;">Enterprise / NGO</h4>
+                    <ul style="list-style: none; font-size: 0.9rem; color: #64748b; padding: 0;">
+                        <li style="margin-bottom: 10px;">• Parametrización avanzada y centros de costo.</li>
+                        <li style="margin-bottom: 10px;">• Diseño de roles (Cajeros, Supervisores, Auditores).</li>
+                        <li style="margin-bottom: 10px;">• Entrenamiento especializado por cada área.</li>
+                    </ul>
+                    <p style="margin-top: 20px; font-weight: bold; color: var(--primary);">Inversión: Según Complejidad*</p>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 0.8rem; margin-top: 20px; color: #94a3b8;">* El costo de implementación es un pago único (fee) por empresa.</p>
+        </div>
+    </section>
+
+    <section style="padding: 60px 0; background-color: var(--bg-light); border-top: 1px solid #e2e8f0;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 style="color: var(--primary); font-weight: 800;">Soporte Técnico y Asistencia</h2>
+                <p style="color: var(--text-main);">Nuestro compromiso es mantener tu operación siempre activa</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                    <h4 style="font-size: 1.1rem; color: var(--blue-accent); margin-bottom: 20px; display: flex; align-items: center;">
+                        <span style="margin-right: 10px;">📩</span> Canales de Atención
+                    </h4>
+                    <p style="font-size: 0.95rem; margin-bottom: 10px;"><strong>Canal Oficial:</strong> Sistema de Tickets / Correo electrónico.</p>
+                    <p style="font-size: 0.95rem;"><strong>Horario:</strong> Lunes a Viernes (Horario administrativo).</p>
+                    <hr style="margin: 20px 0; opacity: 0.1;">
+                    <h5 style="font-size: 1rem; margin-bottom: 10px;">Alcance del Soporte:</h5>
+                    <ul style="font-size: 0.85rem; color: #64748b; line-height: 1.6; padding-left: 20px;">
+                        <li>Errores del sistema e incidencias de base de datos.</li>
+                        <li>Dudas operativas de uso.</li>
+                        <li><strong>Actualizaciones de ley:</strong> Cambios fiscales aplicables en Nicaragua.</li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                    <h4 style="font-size: 1.1rem; color: var(--blue-accent); margin-bottom: 20px; display: flex; align-items: center;">
+                        <span style="margin-right: 10px;">💻</span> Asistencia Remota Mensual
+                    </h4>
+                    <table style="width: 100%; font-size: 0.9rem; border-collapse: collapse;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid var(--bg-light);">
+                                <th style="text-align: left; padding: 10px 5px;">Plan</th>
+                                <th style="text-align: right; padding: 10px 5px;">Incluida</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--bg-light);">
+                                <td style="padding: 10px 5px;">Basic</td>
+                                <td style="text-align: right; padding: 10px 5px; font-weight: 600;">1 sesión</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--bg-light);">
+                                <td style="padding: 10px 5px;">Professional</td>
+                                <td style="text-align: right; padding: 10px 5px; font-weight: 600;">3 sesiones</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px 5px;">Enterprise / NGO</td>
+                                <td style="text-align: right; padding: 10px 5px; font-weight: 600; color: var(--green-success);">Preferencial</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 0.75rem; color: #94a3b8; margin-top: 15px; font-style: italic;">* Las asistencias no son acumulables mes a mes.</p>
+                </div>
+
+                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border-left: 5px solid #f59e0b;">
+                    <h4 style="font-size: 1.1rem; color: #b45309; margin-bottom: 20px; display: flex; align-items: center;">
+                        <span style="margin-right: 10px;">📍</span> Servicios Presenciales
+                    </h4>
+                    <p style="font-size: 0.9rem; color: #64748b; line-height: 1.6;">
+                        El soporte estándar es <strong>exclusivamente remoto</strong>.
+                    </p>
+                    <p style="font-size: 0.9rem; color: #64748b; line-height: 1.6; margin-top: 10px;">
+                        Cualquier asistencia en sitio (visita física) requiere una solicitud independiente, sujeta a disponibilidad y definición de honorarios más viáticos.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 40px 0; background-color: var(--white);">
+        <div class="container">
+            <div style="background-color: #f8fafc; border-radius: 15px; padding: 30px; display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-around; align-items: center; border: 1px dashed #cbd5e1;">
+
+                <div style="max-width: 250px; text-align: center;">
+                    <div style="font-size: 1.5rem; margin-bottom: 10px;">🗓️</div>
+                    <h5 style="font-size: 1rem; font-weight: bold;">Contratación Mínima</h5>
+                    <p style="font-size: 0.85rem; color: #64748b;">Períodos trimestrales. Descuentos en pagos semestrales o anuales.</p>
+                </div>
+
+                <div style="max-width: 250px; text-align: center;">
+                    <div style="font-size: 1.5rem; margin-bottom: 10px;">💵</div>
+                    <h5 style="font-size: 1rem; font-weight: bold;">Moneda y Facturación</h5>
+                    <p style="font-size: 0.85rem; color: #64748b;">Precios en USD. Se factura en Córdobas según el tipo de cambio oficial vigente.</p>
+                </div>
+
+                <div style="max-width: 250px; text-align: center;">
+                    <div style="font-size: 1.5rem; margin-bottom: 10px;">☁️</div>
+                    <h5 style="font-size: 1rem; font-weight: bold;">Infraestructura Cloud</h5>
+                    <p style="font-size: 0.85rem; color: #64748b;">Hospedaje seguro con respaldos diarios para la continuidad de su negocio.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
 
-<section id="features" class="py-5 bg-light">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold text-primary">¿Por qué Facturación Fácil es diferente?</h2>
-            <p class="lead text-muted">Los cimientos de tu tranquilidad</p>
-            <p class="mx-auto" style="max-width: 800px;">
-                Detrás de cada factura y cada movimiento de inventario, existe una ingeniería diseñada para que el sistema nunca sea un obstáculo, sino un motor de crecimiento.
+    <section id="features" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-primary">¿Por qué Facturación Fácil es diferente?</h2>
+                <p class="lead text-muted">Los cimientos de tu tranquilidad</p>
+                <p class="mx-auto" style="max-width: 800px;">
+                    Detrás de cada factura y cada movimiento de inventario, existe una ingeniería diseñada para que el sistema nunca sea un obstáculo, sino un motor de crecimiento.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="icon-box mb-3 text-primary">
+                                <i class="bi bi-lightning-charge-fill fs-2"></i>
+                            </div>
+                            <h5 class="card-title fw-bold text-dark">Experiencia de App Moderna</h5>
+                            <p class="card-text small text-secondary"><strong>¿Qué es?</strong> Usamos tecnología <strong>Blazor</strong>, que permite que la web se comporte como una aplicación instalada.</p>
+                            <p class="card-text text-muted">La interfaz es ultra rápida y fluida. Navega entre facturas y reportes al instante, sin esperas molestas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0 border-top border-primary border-4">
+                        <div class="card-body">
+                            <div class="icon-box mb-3 text-primary">
+                                <i class="bi bi-layers-half fs-2"></i>
+                            </div>
+                            <h5 class="card-title fw-bold text-dark">Arquitectura Limpia</h5>
+                            <p class="card-text small text-secondary"><strong>¿Qué es?</strong> Un diseño modular que separa la lógica de tu negocio de la base de datos.</p>
+                            <p class="card-text text-muted">Tu inversión está protegida. El sistema es fácil de evolucionar y permite añadir funciones sin reconstruir todo desde cero.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="icon-box mb-3 text-primary">
+                                <i class="bi bi-box-seam fs-2"></i>
+                            </div>
+                            <h5 class="card-title fw-bold text-dark">Cerebro que se Adapta</h5>
+                            <p class="card-text small text-secondary"><strong>¿Qué es?</strong> Control de lotes y vencimientos <strong>opcional</strong> por producto.</p>
+                            <p class="card-text text-muted">Agilidad para productos generales y control estricto para productos críticos, evitando pérdidas por vencimientos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="icon-box mb-3 text-primary">
+                                <i class="bi bi-shield-lock-fill fs-2"></i>
+                            </div>
+                            <h5 class="card-title fw-bold text-dark">Supervisión y Control</h5>
+                            <p class="card-text small text-secondary"><strong>¿Qué es?</strong> "Pasaportes digitales" para operaciones sensibles que requieren autorización.</p>
+                            <p class="card-text text-muted">Solo supervisores autorizados pueden desbloquear lotes o ventas vencidas, garantizando que tus reglas se cumplan.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="icon-box mb-3 text-primary">
+                                <i class="bi bi-speedometer2 fs-2"></i>
+                            </div>
+                            <h5 class="card-title fw-bold text-dark">Información al Instante</h5>
+                            <p class="card-text small text-secondary"><strong>¿Qué es?</strong> Tecnología de doble vía que separa el registro de la lectura de datos.</p>
+                            <p class="card-text text-muted">Factura a máxima velocidad mientras generas reportes complejos sin que el sistema se ponga lento.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0" style="background-color: #f8f9fa; border: 1px solid #e9ecef !important;">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-code-slash text-primary me-2 fs-4"></i>
+                                <h5 class="card-title fw-bold text-dark mb-0">Resumen para tu TI</h5>
+                            </div>
+                            <ul class="list-unstyled small mt-2">
+                                <li class="d-flex justify-content-between mb-2 border-bottom pb-1">
+                                    <span class="text-secondary font-monospace">Frontend:</span>
+                                    <span class="fw-bold text-dark">Blazor / MudBlazor</span>
+                                </li>
+                                <li class="d-flex justify-content-between mb-2 border-bottom pb-1">
+                                    <span class="text-secondary font-monospace">Backend:</span>
+                                    <span class="fw-bold text-dark">.NET 9 / C#</span>
+                                </li>
+                                <li class="d-flex justify-content-between mb-2 border-bottom pb-1">
+                                    <span class="text-secondary font-monospace">Base de Datos:</span>
+                                    <span class="fw-bold text-dark">SQL Server 2022</span>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                    <span class="text-secondary font-monospace">Arquitectura:</span>
+                                    <span class="fw-bold text-dark">Clean Arch + CQRS</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="diagnostico" class="container" style="padding: 80px 0;">
+        <div class="form-box">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 10px;">Solicitud de Diagnóstico Técnico</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: #64748b; font-size: 0.9rem;">
+                Exclusivo para clientes de <strong>WEB SOLUTION</strong>. <br>
+                <span style="color: #e11d48;">* El diagnóstico es gratuito; la ejecución de la migración tiene un costo adicional.</span>
             </p>
+
+            <form id="contactForm" class="grid-form">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label>Razón Social / RUC</label>
+                        <input type="text" id="empresa" required placeholder="Nombre legal de la empresa">
+                    </div>
+                    <div class="form-group">
+                        <label>WhatsApp de Contacto</label>
+                        <input type="tel" id="telefono" required placeholder="8888-8888">
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+                    <div class="form-group">
+                        <label>Sistema de Origen (Donde están sus datos hoy)</label>
+                        <select id="sistema_origen">
+                            <option value="excel">Excel / Hojas de Cálculo</option>
+                            <option value="quickbooks">Quickbooks / Peachtree</option>
+                            <option value="monica">Mónica / Softland</option>
+                            <option value="manual">Registro Manual (Papel)</option>
+                            <option value="otro">Otro Sistema SQL</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Número de Sucursales</label>
+                        <input type="number" id="sucursales" min="1" value="1">
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 15px;">
+                    <label>Detalle de Inventario (Opcional)</label>
+                    <textarea id="detalle" rows="4" placeholder="Ej: Tengo 2,000 productos con lotes y 500 clientes por migrar..."></textarea>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <button type="submit" class="btn-cta" style="width: 100%;">
+                        Enviar Solicitud a WEB SOLUTION
+                    </button>
+                </div>
+            </form>
         </div>
-
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
-                        <div class="icon-box mb-3 text-primary">
-                            <i class="bi bi-lightning-charge-fill fs-2"></i>
-                        </div>
-                        <h5 class="card-title fw-bold text-dark">Experiencia de App Moderna</h5>
-                        <p class="card-text small text-secondary"><strong>¿Qué es?</strong> Usamos tecnología <strong>Blazor</strong>, que permite que la web se comporte como una aplicación instalada.</p>
-                        <p class="card-text text-muted">La interfaz es ultra rápida y fluida. Navega entre facturas y reportes al instante, sin esperas molestas.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm border-0 border-top border-primary border-4">
-                    <div class="card-body">
-                        <div class="icon-box mb-3 text-primary">
-                            <i class="bi bi-layers-half fs-2"></i>
-                        </div>
-                        <h5 class="card-title fw-bold text-dark">Arquitectura Limpia</h5>
-                        <p class="card-text small text-secondary"><strong>¿Qué es?</strong> Un diseño modular que separa la lógica de tu negocio de la base de datos.</p>
-                        <p class="card-text text-muted">Tu inversión está protegida. El sistema es fácil de evolucionar y permite añadir funciones sin reconstruir todo desde cero.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
-                        <div class="icon-box mb-3 text-primary">
-                            <i class="bi bi-box-seam fs-2"></i>
-                        </div>
-                        <h5 class="card-title fw-bold text-dark">Cerebro que se Adapta</h5>
-                        <p class="card-text small text-secondary"><strong>¿Qué es?</strong> Control de lotes y vencimientos <strong>opcional</strong> por producto.</p>
-                        <p class="card-text text-muted">Agilidad para productos generales y control estricto para productos críticos, evitando pérdidas por vencimientos.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
-                        <div class="icon-box mb-3 text-primary">
-                            <i class="bi bi-shield-lock-fill fs-2"></i>
-                        </div>
-                        <h5 class="card-title fw-bold text-dark">Supervisión y Control</h5>
-                        <p class="card-text small text-secondary"><strong>¿Qué es?</strong> "Pasaportes digitales" para operaciones sensibles que requieren autorización.</p>
-                        <p class="card-text text-muted">Solo supervisores autorizados pueden desbloquear lotes o ventas vencidas, garantizando que tus reglas se cumplan.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
-                        <div class="icon-box mb-3 text-primary">
-                            <i class="bi bi-speedometer2 fs-2"></i>
-                        </div>
-                        <h5 class="card-title fw-bold text-dark">Información al Instante</h5>
-                        <p class="card-text small text-secondary"><strong>¿Qué es?</strong> Tecnología de doble vía que separa el registro de la lectura de datos.</p>
-                        <p class="card-text text-muted">Factura a máxima velocidad mientras generas reportes complejos sin que el sistema se ponga lento.</p>
-                    </div>
-                </div>
-            </div>
-
-           <div class="col-md-6 col-lg-4">
-    <div class="card h-100 shadow-sm border-0" style="background-color: #f8f9fa; border: 1px solid #e9ecef !important;">
-        <div class="card-body">
-            <div class="d-flex align-items-center mb-3">
-                <i class="bi bi-code-slash text-primary me-2 fs-4"></i>
-                <h5 class="card-title fw-bold text-dark mb-0">Resumen para tu TI</h5>
-            </div>
-            <ul class="list-unstyled small mt-2">
-                <li class="d-flex justify-content-between mb-2 border-bottom pb-1">
-                    <span class="text-secondary font-monospace">Frontend:</span>
-                    <span class="fw-bold text-dark">Blazor / MudBlazor</span>
-                </li>
-                <li class="d-flex justify-content-between mb-2 border-bottom pb-1">
-                    <span class="text-secondary font-monospace">Backend:</span>
-                    <span class="fw-bold text-dark">.NET 9 / C#</span>
-                </li>
-                <li class="d-flex justify-content-between mb-2 border-bottom pb-1">
-                    <span class="text-secondary font-monospace">Base de Datos:</span>
-                    <span class="fw-bold text-dark">SQL Server 2022</span>
-                </li>
-                <li class="d-flex justify-content-between">
-                    <span class="text-secondary font-monospace">Arquitectura:</span>
-                    <span class="fw-bold text-dark">Clean Arch + CQRS</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-        </div>
-    </div>
-</section>
-
-
-
-   <section id="diagnostico" class="container" style="padding: 80px 0;">
-    <div class="form-box">
-        <h2 style="text-align: center; color: var(--primary); margin-bottom: 10px;">Solicitud de Diagnóstico Técnico</h2>
-        <p style="text-align: center; margin-bottom: 30px; color: #64748b; font-size: 0.9rem;">
-            Exclusivo para clientes de <strong>WEB SOLUTION</strong>. <br>
-            <span style="color: #e11d48;">* El diagnóstico es gratuito; la ejecución de la migración tiene un costo adicional.</span>
-        </p>
-        
-        <form id="contactForm" class="grid-form">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <div class="form-group">
-                    <label>Razón Social / RUC</label>
-                    <input type="text" id="empresa" required placeholder="Nombre legal de la empresa">
-                </div>
-                <div class="form-group">
-                    <label>WhatsApp de Contacto</label>
-                    <input type="tel" id="telefono" required placeholder="8888-8888">
-                </div>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
-                <div class="form-group">
-                    <label>Sistema de Origen (Donde están sus datos hoy)</label>
-                    <select id="sistema_origen">
-                        <option value="excel">Excel / Hojas de Cálculo</option>
-                        <option value="quickbooks">Quickbooks / Peachtree</option>
-                        <option value="monica">Mónica / Softland</option>
-                        <option value="manual">Registro Manual (Papel)</option>
-                        <option value="otro">Otro Sistema SQL</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Número de Sucursales</label>
-                    <input type="number" id="sucursales" min="1" value="1">
-                </div>
-            </div>
-
-            <div class="form-group" style="margin-top: 15px;">
-                <label>Detalle de Inventario (Opcional)</label>
-                <textarea id="detalle" rows="4" placeholder="Ej: Tengo 2,000 productos con lotes y 500 clientes por migrar..."></textarea>
-            </div>
-
-            <div style="margin-top: 20px;">
-                <button type="submit" class="btn-cta" style="width: 100%;">
-                    Enviar Solicitud a WEB SOLUTION
-                </button>
-            </div>
-        </form>
-    </div>
-</section>
+    </section>
 
     <footer>
         <div class="container">
@@ -566,27 +776,27 @@
     </footer>
 
     <script>
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Captura de datos
-    const empresa = document.getElementById('empresa').value;
-    const tel = document.getElementById('telefono').value;
-    const sistema = document.getElementById('sistema_origen').value;
-    const sucursales = document.getElementById('sucursales').value;
-    const detalle = document.getElementById('detalle').value;
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-    // Construcción del mensaje para WhatsApp
-    const mensaje = `*SOLICITUD DE DIAGNÓSTICO - WEB SOLUTION*%n` +
-                    `*Empresa:* ${empresa}%0A` +
-                    `*Teléfono:* ${tel}%0A` +
-                    `*Sistema Origen:* ${sistema}%0A` +
-                    `*Sucursales:* ${sucursales}%0A` +
-                    `*Detalles:* ${detalle}`;
+            // Captura de datos
+            const empresa = document.getElementById('empresa').value;
+            const tel = document.getElementById('telefono').value;
+            const sistema = document.getElementById('sistema_origen').value;
+            const sucursales = document.getElementById('sucursales').value;
+            const detalle = document.getElementById('detalle').value;
 
-    // Abrir WhatsApp de Pablo (85273135)
-    window.open(`https://wa.me/50585273135?text=${mensaje}`, '_blank');
-});
+            // Construcción del mensaje para WhatsApp
+            const mensaje = `*SOLICITUD DE DIAGNÓSTICO - WEB SOLUTION*%n` +
+                `*Empresa:* ${empresa}%0A` +
+                `*Teléfono:* ${tel}%0A` +
+                `*Sistema Origen:* ${sistema}%0A` +
+                `*Sucursales:* ${sucursales}%0A` +
+                `*Detalles:* ${detalle}`;
+
+            // Abrir WhatsApp de Pablo (85273135)
+            window.open(`https://wa.me/50585273135?text=${mensaje}`, '_blank');
+        });
     </script>
 </body>
 </html>
