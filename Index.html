@@ -182,50 +182,83 @@
             <p>Estructura diseñada para la operatividad real de su negocio.</p>
         </div>
 
-        <div class="segment-grid">
-            <div class="segment-card">
-                <h3>1. Gestión de Inventarios</h3>
-                <ul>
-                    <li>Control de Lotes y Fechas de Vencimiento.</li>
-                    <li>Kárdex histórico por bodega y sucursal.</li>
-                    <li>Traslados, entradas y ajustes en tiempo real.</li>
-                    <li>Auditoría de diferencias físicas vs sistema.</li>
+        <div class="segment-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; padding: 20px;">
+
+            <div class="segment-card" style="background: white; padding: 30px; border-radius: 20px; border-top: 8px solid var(--blue-accent); box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
+                <div style="margin-bottom: 20px;">
+                    <span style="background: #eff6ff; padding: 10px; border-radius: 12px; font-size: 1.5rem;">📦</span>
+                </div>
+                <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 15px; font-weight: 800;">Gestión de Inventarios</h3>
+                <ul style="list-style: none; padding: 0; margin-bottom: 25px; flex-grow: 1;">
+                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
+                        <span style="color: var(--blue-accent); margin-right: 10px; font-weight: bold;">•</span>
+                        <span><strong>Control de Lotes:</strong> Trazabilidad total y alertas de vencimiento para evitar mermas.</span>
+                    </li>
+                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
+                        <span style="color: var(--blue-accent); margin-right: 10px; font-weight: bold;">•</span>
+                        <span><strong>Multibodega Real:</strong> Movimientos entre sucursales y bodegas con kárdex histórico auditable.</span>
+                    </li>
+                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
+                        <span style="color: var(--blue-accent); margin-right: 10px; font-weight: bold;">•</span>
+                        <span><strong>Auditoría de Stock:</strong> Ajustes físicos vs sistema protegidos por permisos de supervisor.</span>
+                    </li>
                 </ul>
-                <span class="value-label">VALOR: Cero pérdidas por productos vencidos y trazabilidad total.</span>
+                <div style="background: #f8fafc; padding: 12px; border-radius: 10px; border-left: 4px solid var(--blue-accent);">
+                    <small style="color: #64748b; font-weight: 700; text-transform: uppercase; font-size: 0.75rem;">Valor Estratégico</small>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--primary); font-weight: 600;">Cero fugas de mercancía y stock siempre optimizado.</p>
+                </div>
             </div>
 
-            <div class="segment-card">
-                <h3>2. Ventas y Facturación</h3>
-                <ul>
-                    <li>Emisión de facturas y Notas de Crédito/Débito.</li>
-                    <li>Validación automática de límites de crédito.</li>
-                    <li>Reportes fiscales y libros de ventas.</li>
-                    <li>Múltiples canales y listas de precios.</li>
+            <div class="segment-card" style="background: white; padding: 30px; border-radius: 20px; border-top: 8px solid var(--green-success); box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
+                <div style="margin-bottom: 20px;">
+                    <span style="background: #f0fdf4; padding: 10px; border-radius: 12px; font-size: 1.5rem;">⚡</span>
+                </div>
+                <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 15px; font-weight: 800;">Facturación y Ventas</h3>
+                <ul style="list-style: none; padding: 0; margin-bottom: 25px; flex-grow: 1;">
+                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
+                        <span style="color: var(--green-success); margin-right: 10px; font-weight: bold;">•</span>
+                        <span><strong>Facturación Ágil:</strong> Emisión de documentos fiscales bajo normativa vigente en segundos.</span>
+                    </li>
+                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
+                        <span style="color: var(--green-success); margin-right: 10px; font-weight: bold;">•</span>
+                        <span><strong>Control de Cajas:</strong> Apertura, arqueo y cierre de caja detallado por usuario y turno.</span>
+                    </li>
+                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
+                        <span style="color: var(--green-success); margin-right: 10px; font-weight: bold;">•</span>
+                        <span><strong>Venta Omnicanal:</strong> Múltiples listas de precios y gestión de vendedores integrada.</span>
+                    </li>
                 </ul>
-                <span class="value-label">VALOR: Cumplimiento fiscal ágil y experiencia de cliente premium.</span>
+                <div style="background: #f8fafc; padding: 12px; border-radius: 10px; border-left: 4px solid var(--green-success);">
+                    <small style="color: #64748b; font-weight: 700; text-transform: uppercase; font-size: 0.75rem;">Valor Estratégico</small>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--primary); font-weight: 600;">Atención rápida y control total del dinero en caja.</p>
+                </div>
             </div>
 
-            <div class="segment-card">
-                <h3>3. Control de Cajas</h3>
-                <ul>
-                    <li>Apertura y arqueo por usuario (Corte X/Z).</li>
-                    <li>Registro de gastos y depósitos manuales.</li>
-                    <li>Relevos autorizados por supervisor.</li>
-                    <li>Conciliación de efectivo y bancos.</li>
+            <div class="segment-card" style="background: white; padding: 30px; border-radius: 20px; border-top: 8px solid #f59e0b; box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
+                <div style="margin-bottom: 20px;">
+                    <span style="background: #fffbeb; padding: 10px; border-radius: 12px; font-size: 1.5rem;">📊</span>
+                </div>
+                <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 15px; font-weight: 800;">Cartera y Cobranza</h3>
+                <ul style="list-style: none; padding: 0; margin-bottom: 25px; flex-grow: 1;">
+                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
+                        <span style="color: #f59e0b; margin-right: 10px; font-weight: bold;">•</span>
+                        <span><strong>Notas de Crédito/Débito:</strong> Gestión profesional de devoluciones y ajustes de saldo.</span>
+                    </li>
+                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
+                        <span style="color: #f59e0b; margin-right: 10px; font-weight: bold;">•</span>
+                        <span><strong>Gestión de Pagos:</strong> Recibos oficiales y aplicación inteligente de abonos a facturas.</span>
+                    </li>
+                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
+                        <span style="color: #f59e0b; margin-right: 10px; font-weight: bold;">•</span>
+                        <span><strong>Límites de Crédito:</strong> Bloqueo automático de facturación para clientes con mora.</span>
+                    </li>
                 </ul>
-                <span class="value-label">VALOR: Blindaje contra fraude y transparencia de flujo.</span>
+                <div style="background: #f8fafc; padding: 12px; border-radius: 10px; border-left: 4px solid #f59e0b;">
+                    <small style="color: #64748b; font-weight: 700; text-transform: uppercase; font-size: 0.75rem;">Valor Estratégico</small>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--primary); font-weight: 600;">Recuperación de cartera y flujo de caja saludable.</p>
+                </div>
             </div>
 
-            <div class="segment-card">
-                <h3>4. Pagos y Cartera (CxC)</h3>
-                <ul>
-                    <li>Antigüedad de saldos y estados de cuenta.</li>
-                    <li>Bloqueo automático de clientes por mora.</li>
-                    <li>Registro de abonos y recuperación por cobrador.</li>
-                    <li>Alertas preventivas de vencimiento.</li>
-                </ul>
-                <span class="value-label">VALOR: Mayor liquidez y reducción drástica de morosidad.</span>
-            </div>
         </div>
     </section>
 
