@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -128,6 +129,30 @@
             .hero h1 { font-size: 2.2rem; }
             .segment-grid { grid-template-columns: 1fr; }
         }
+
+
+
+
+#features .card {
+    transition: transform 0.3s ease, shadow 0.3s ease;
+}
+
+#features .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+#features .icon-box i {
+    color: #0d6efd; /* Color primario de Bootstrap */
+}
+
+#features .text-primary {
+    color: #0d6efd !important;
+}
+
+#features .bg-dark {
+    background-color: #1a1d20 !important;
+}
     </style>
 </head>
 <body>
@@ -370,6 +395,117 @@
     </div>
 </section>
 
+
+<section id="features" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-primary">¿Por qué Facturación Fácil es diferente?</h2>
+            <p class="lead text-muted">Los cimientos de tu tranquilidad</p>
+            <p class="mx-auto" style="max-width: 800px;">
+                Detrás de cada factura y cada movimiento de inventario, existe una ingeniería diseñada para que el sistema nunca sea un obstáculo, sino un motor de crecimiento.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <div class="icon-box mb-3 text-primary">
+                            <i class="bi bi-lightning-charge-fill fs-2"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-dark">Experiencia de App Moderna</h5>
+                        <p class="card-text small text-secondary"><strong>¿Qué es?</strong> Usamos tecnología <strong>Blazor</strong>, que permite que la web se comporte como una aplicación instalada.</p>
+                        <p class="card-text text-muted">La interfaz es ultra rápida y fluida. Navega entre facturas y reportes al instante, sin esperas molestas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 border-top border-primary border-4">
+                    <div class="card-body">
+                        <div class="icon-box mb-3 text-primary">
+                            <i class="bi bi-layers-half fs-2"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-dark">Arquitectura Limpia</h5>
+                        <p class="card-text small text-secondary"><strong>¿Qué es?</strong> Un diseño modular que separa la lógica de tu negocio de la base de datos.</p>
+                        <p class="card-text text-muted">Tu inversión está protegida. El sistema es fácil de evolucionar y permite añadir funciones sin reconstruir todo desde cero.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <div class="icon-box mb-3 text-primary">
+                            <i class="bi bi-box-seam fs-2"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-dark">Cerebro que se Adapta</h5>
+                        <p class="card-text small text-secondary"><strong>¿Qué es?</strong> Control de lotes y vencimientos <strong>opcional</strong> por producto.</p>
+                        <p class="card-text text-muted">Agilidad para productos generales y control estricto para productos críticos, evitando pérdidas por vencimientos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <div class="icon-box mb-3 text-primary">
+                            <i class="bi bi-shield-lock-fill fs-2"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-dark">Supervisión y Control</h5>
+                        <p class="card-text small text-secondary"><strong>¿Qué es?</strong> "Pasaportes digitales" para operaciones sensibles que requieren autorización.</p>
+                        <p class="card-text text-muted">Solo supervisores autorizados pueden desbloquear lotes o ventas vencidas, garantizando que tus reglas se cumplan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <div class="icon-box mb-3 text-primary">
+                            <i class="bi bi-speedometer2 fs-2"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-dark">Información al Instante</h5>
+                        <p class="card-text small text-secondary"><strong>¿Qué es?</strong> Tecnología de doble vía que separa el registro de la lectura de datos.</p>
+                        <p class="card-text text-muted">Factura a máxima velocidad mientras generas reportes complejos sin que el sistema se ponga lento.</p>
+                    </div>
+                </div>
+            </div>
+
+           <div class="col-md-6 col-lg-4">
+    <div class="card h-100 shadow-sm border-0" style="background-color: #f8f9fa; border: 1px solid #e9ecef !important;">
+        <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-code-slash text-primary me-2 fs-4"></i>
+                <h5 class="card-title fw-bold text-dark mb-0">Resumen para tu TI</h5>
+            </div>
+            <ul class="list-unstyled small mt-2">
+                <li class="d-flex justify-content-between mb-2 border-bottom pb-1">
+                    <span class="text-secondary font-monospace">Frontend:</span>
+                    <span class="fw-bold text-dark">Blazor / MudBlazor</span>
+                </li>
+                <li class="d-flex justify-content-between mb-2 border-bottom pb-1">
+                    <span class="text-secondary font-monospace">Backend:</span>
+                    <span class="fw-bold text-dark">.NET 9 / C#</span>
+                </li>
+                <li class="d-flex justify-content-between mb-2 border-bottom pb-1">
+                    <span class="text-secondary font-monospace">Base de Datos:</span>
+                    <span class="fw-bold text-dark">SQL Server 2022</span>
+                </li>
+                <li class="d-flex justify-content-between">
+                    <span class="text-secondary font-monospace">Arquitectura:</span>
+                    <span class="fw-bold text-dark">Clean Arch + CQRS</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</section>
+
+
+
    <section id="diagnostico" class="container" style="padding: 80px 0;">
     <div class="form-box">
         <h2 style="text-align: center; color: var(--primary); margin-bottom: 10px;">Solicitud de Diagnóstico Técnico</h2>
@@ -454,6 +590,3 @@
     </script>
 </body>
 </html>
-
-
-
