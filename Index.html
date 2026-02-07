@@ -925,90 +925,83 @@
     </section>
 
     <section style="padding: 60px 0; background-color: var(--white);" id="matriz">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Matriz de Funcionalidades por Plan</h2>
-                <p>Compare las capacidades de cada plan para elegir el que mejor se adapta a su negocio</p>
+        <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
+            <div class="section-title fade-in" style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-weight: 800; color: #0f172a; font-size: 2rem; margin-bottom: 10px;">Matriz de Funcionalidades por Plan</h2>
+                <p style="color: #64748b;">Compare las capacidades de cada plan para elegir el que mejor se adapta a su negocio</p>
             </div>
 
-            <div class="feature-matrix">
-                <table class="feature-table">
+            <div class="feature-matrix" style="width: 100%; overflow-x: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); -webkit-overflow-scrolling: touch;">
+                <table class="feature-table" style="width: 100%; min-width: 800px; border-collapse: collapse; background: white; text-align: left;">
                     <thead>
-                        <tr>
-                            <th style="border-radius: var(--radius-sm) 0 0 0;">Funcionalidad / Capacidad</th>
-                            <th>Plan Basic</th>
-                            <th>Plan Professional</th>
-                            <th style="border-radius: 0 var(--radius-sm) 0 0;">Plan Enterprise</th>
+                        <tr style="background-color: #0f172a; color: white;">
+                            <th style="padding: 18px; font-size: 0.9rem;">Funcionalidad / Capacidad</th>
+                            <th style="padding: 18px; font-size: 0.9rem; text-align: center;">Plan Basic</th>
+                            <th style="padding: 18px; font-size: 0.9rem; text-align: center;">Plan Professional</th>
+                            <th style="padding: 18px; font-size: 0.9rem; text-align: center;">Plan Enterprise</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Usuarios Incluidos</td>
-                            <td>Hasta 2</td>
-                            <td>Hasta 10</td>
-                            <td>Hasta 50</td>
+                    <tbody style="color: #334155; font-size: 0.9rem;">
+                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                            <td style="padding: 15px; font-weight: 600; background: #f8fafc;">Usuarios Incluidos</td>
+                            <td style="padding: 15px; text-align: center;">Hasta 2</td>
+                            <td style="padding: 15px; text-align: center;">Hasta 10</td>
+                            <td style="padding: 15px; text-align: center;">Hasta 50</td>
                         </tr>
-                        <tr>
-                            <td>Ventas al Crédito (CxC)</td>
-                            <td class="badge-no">No (Solo contado)</td>
-                            <td class="badge-yes">Completo</td>
-                            <td class="badge-yes">Completo</td>
+                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                            <td style="padding: 15px; font-weight: 600; background: #f8fafc;">Ventas al Crédito (CxC)</td>
+                            <td style="padding: 15px; text-align: center; color: #ef4444;">No (Solo contado)</td>
+                            <td style="padding: 15px; text-align: center; color: #10b981; font-weight: bold;">Completo</td>
+                            <td style="padding: 15px; text-align: center; color: #10b981; font-weight: bold;">Completo</td>
                         </tr>
-                        <tr>
-                            <td>Control de Lotes y Vencimientos</td>
-                            <td class="badge-optional">Opcional</td>
-                            <td class="badge-yes">✔ Incluido</td>
-                            <td class="badge-yes">✔ Incluido</td>
+                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                            <td style="padding: 15px; font-weight: 600; background: #f8fafc;">Control de Lotes y Vencimientos</td>
+                            <td style="padding: 15px; text-align: center; color: #64748b;">Opcional</td>
+                            <td style="padding: 15px; text-align: center;">✔ Incluido</td>
+                            <td style="padding: 15px; text-align: center;">✔ Incluido</td>
                         </tr>
-                        <tr>
-                            <td>Gestión de Bodegas</td>
-                            <td>
-                                <span class="badge-no">✘ No</span><br>
-                                <small style="font-size: 0.75rem;">(Solo 2 bodega principal)</small>
+                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                            <td style="padding: 15px; font-weight: 600; background: #f8fafc;">Gestión de Bodegas</td>
+                            <td style="padding: 15px; text-align: center;">
+                                <span style="color: #ef4444;">✘ No</span><br>
+                                <small style="font-size: 0.75rem; color: #94a3b8;">(Solo 1 principal)</small>
                             </td>
-                            <td>
-                                <span class="badge-yes">✔ Hasta 3</span><br>
-                                <small style="font-size: 0.75rem;">Bodegas independientes</small>
+                            <td style="padding: 15px; text-align: center;">
+                                <span style="color: #10b981;">✔ Hasta 3</span><br>
+                                <small style="font-size: 0.75rem; color: #94a3b8;">Independientes</small>
                             </td>
-                            <td>
-                                <span class="badge-yes">✔ Ilimitadas</span><br>
-                                <small style="font-size: 0.75rem;">O según contrato</small>
+                            <td style="padding: 15px; text-align: center;">
+                                <span style="color: #10b981;">✔ Ilimitadas</span><br>
+                                <small style="font-size: 0.75rem; color: #94a3b8;">Según contrato</small>
                             </td>
                         </tr>
-                        <tr>
-                            <td>Multisucursal</td>
-                            <td class="badge-no">No (1 fija)</td>
-                            <td>3 sucursales</td>
-                            <td>3 x Empresa</td>
+                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                            <td style="padding: 15px; font-weight: 600; background: #f8fafc;">Multisucursal</td>
+                            <td style="padding: 15px; text-align: center;">No (1 fija)</td>
+                            <td style="padding: 15px; text-align: center;">3 sucursales</td>
+                            <td style="padding: 15px; text-align: center;">3 x Empresa</td>
                         </tr>
-                        <tr>
-                            <td>Multiempresa</td>
-                            <td class="badge-no">✘ No</td>
-                            <td class="badge-no">✘ No</td>
-                            <td class="badge-yes">Hasta 5 Empresas</td>
+                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                            <td style="padding: 15px; font-weight: 600; background: #f8fafc;">Auditoría y Roles</td>
+                            <td style="padding: 15px; text-align: center;">Básica</td>
+                            <td style="padding: 15px; text-align: center;">Parcial</td>
+                            <td style="padding: 15px; text-align: center; color: #2563eb; font-weight: bold;">Completa</td>
                         </tr>
-                        <tr>
-                            <td>Auditoría y Roles</td>
-                            <td class="badge-no">Básica</td>
-                            <td>Parcial</td>
-                            <td class="badge-yes">Completa</td>
-                        </tr>
-                        <tr>
-                            <td>Hospedaje Cloud y Respaldo</td>
-                            <td class="badge-yes">✔ Incluido</td>
-                            <td class="badge-yes">✔ Incluido</td>
-                            <td class="badge-yes">✔ Incluido</td>
-                        </tr>
-                        <tr>
-                            <td>Soporte Técnico</td>
-                            <td>Vía Ticket</td>
-                            <td>Remoto Estándar</td>
-                            <td class="badge-yes">Prioritario 24/7</td>
+                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                            <td style="padding: 15px; font-weight: 600; background: #f8fafc;">Hospedaje Cloud y Respaldo</td>
+                            <td style="padding: 15px; text-align: center;">✔ Incluido</td>
+                            <td style="padding: 15px; text-align: center;">✔ Incluido</td>
+                            <td style="padding: 15px; text-align: center;">✔ Incluido</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <p style="margin-top: 20px; font-size: 0.85rem; color: #64748b; font-style: italic; text-align: center;">
+
+            <div style="text-align: center; margin-top: 15px; color: #94a3b8; font-size: 0.8rem; display: block;" class="mobile-hint">
+                <span>↔ Deslice para ver todos los planes</span>
+            </div>
+
+            <p style="margin-top: 25px; font-size: 0.8rem; color: #94a3b8; font-style: italic; text-align: center; line-height: 1.4;">
                 * El acceso y capacidad operativa están sujetos al nivel de suscripción activa según los términos del modelo SaaS 2026.
             </p>
         </div>
