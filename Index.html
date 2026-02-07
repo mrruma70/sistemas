@@ -3,44 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facturación Fácil | Distribuidor Exclusivo: WEB SOLUTION</title>
+    <title>Facturación Fácil | ERP SaaS para Nicaragua | Distribuidor: WEB SOLUTION</title>
+    <meta name="description" content="Gestión completa de inventarios por lotes, control de cajas y carteras en la nube. Automatice su éxito de la mano de WEB SOLUTION.">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
+            /* Paleta principal */
             --primary: #0f172a;
             --blue-accent: #2563eb;
+            --blue-light: #3b82f6;
             --green-success: #10b981;
             --wa-green: #25d366;
             --bg-light: #f8fafc;
             --text-main: #334155;
             --white: #ffffff;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            
+            /* Sombras y bordes */
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --shadow-soft: 0 10px 25px rgba(0,0,0,0.05);
+            --shadow-medium: 0 15px 30px rgba(0,0,0,0.08);
+            --shadow-heavy: 0 20px 40px rgba(0,0,0,0.12);
+            
+            /* Transiciones */
+            --transition: all 0.3s ease;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-main); scroll-behavior: smooth; }
-        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-light); 
+            color: var(--text-main);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4 { 
+            font-family: 'Poppins', sans-serif; 
+            font-weight: 700;
+        }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .section-title p {
+            color: #64748b;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Navbar mejorada */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(248, 250, 252, 0.95);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 12px 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .brand-logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--blue-accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+        
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .brand-text strong {
+            font-size: 1.1rem;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+        }
+        
+        .brand-text small {
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--blue-accent);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--blue-accent);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: var(--blue-accent);
+            color: white;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(37, 99, 235, 0.4);
+            background: var(--blue-light);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid #cbd5e1;
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--blue-accent);
+            color: var(--blue-accent);
+        }
 
         /* Floating WhatsApp */
         .wa-float {
             position: fixed;
-            width: 60px; height: 60px;
-            bottom: 40px; right: 40px;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
             background-color: var(--wa-green);
             color: #FFF;
-            border-radius: 50px;
+            border-radius: 50%;
             text-align: center;
             font-size: 30px;
-            box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
-        .wa-float:hover { transform: scale(1.1); background-color: #128c7e; }
+        
+        .wa-float:hover { 
+            transform: scale(1.1); 
+            background-color: #128c7e;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
 
         /* Top Bar Distribuidor */
         .distribuidor-bar {
@@ -49,109 +229,504 @@
             padding: 10px 0;
             font-size: 0.85rem;
             text-align: center;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             border-bottom: 2px solid var(--blue-accent);
         }
 
-        /* Hero Section */
+        /* Hero Section mejorada */
         .hero {
             background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
             color: var(--white);
-            padding: 100px 0;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
         }
-        .hero-content { max-width: 800px; }
-        .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
-        .hero p { font-size: 1.3rem; margin-bottom: 30px; opacity: 0.9; }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>') no-repeat;
+            background-size: cover;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
-        /* Secciones de Segmentos Extendidas */
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 2.5rem; color: var(--primary); }
-
+        /* Grid de módulos */
         .segment-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-bottom: 60px;
         }
-
+        
         .segment-card {
             background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--blue-accent);
+            padding: 35px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            border-top: 6px solid var(--blue-accent);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
-        .segment-card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.4rem; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .segment-card ul { list-style: none; margin-bottom: 20px; }
-        .segment-card ul li { margin-bottom: 10px; font-size: 0.95rem; position: relative; padding-left: 25px; }
-        .segment-card ul li::before { content: '✔'; position: absolute; left: 0; color: var(--green-success); font-weight: bold; }
         
-        .value-label { 
-            display: block; background: #f0fdf4; color: #166534; 
-            padding: 10px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
-            border-left: 4px solid var(--green-success);
+        .segment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .segment-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .segment-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+        
+        .segment-card ul {
+            list-style: none;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+        
+        .segment-card ul li {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 28px;
+            line-height: 1.5;
+        }
+        
+        .segment-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green-success);
+            font-weight: bold;
+        }
+        
+        .value-box {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--blue-accent);
+        }
+        
+        .value-label {
+            display: block;
+            color: #64748b;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            margin-bottom: 5px;
+        }
+        
+        .value-text {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--primary);
+            font-weight: 600;
         }
 
-        /* Tabla de Precios */
-        .pricing-section { padding: 80px 0; background: #f1f5f9; }
-        .table-container { 
-            background: white; border-radius: 20px; overflow: hidden; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+        /* Pricing Section mejorada */
+        .pricing-section {
+            padding: 80px 0;
+            background: #f1f5f9;
         }
-        table { width: 100%; border-collapse: collapse; text-align: left; }
-        th, td { padding: 25px; border-bottom: 1px solid #f1f5f9; }
-        th { background: var(--primary); color: white; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
-        .price-col { font-weight: 800; color: var(--blue-accent); font-size: 1.2rem; }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .price-card {
+            background: white;
+            padding: 35px 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .price-card.featured {
+            border: 2px solid var(--blue-accent);
+            transform: scale(1.02);
+        }
+        
+        .featured-label {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--blue-accent);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        
+        .price-header h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .price-amount {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--blue-accent);
+            margin-bottom: 20px;
+        }
+        
+        .price-amount span {
+            font-size: 1rem;
+            color: #64748b;
+            font-weight: 400;
+        }
+        
+        .tech-specs {
+            background: #f8fafc;
+            padding: 18px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            border-left: 4px solid var(--blue-accent);
+        }
+        
+        .price-features {
+            list-style: none;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+        
+        .price-features li {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            color: var(--text-main);
+        }
+        
+        .price-features li::before {
+            content: '✓';
+            color: var(--green-success);
+            margin-right: 12px;
+            font-weight: 900;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        /* Matriz de funcionalidades responsive */
+        .feature-matrix {
+            overflow-x: auto;
+            margin-top: 40px;
+        }
+        
+        .feature-table {
+            width: 100%;
+            min-width: 900px;
+            border-collapse: collapse;
+            background: white;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .feature-table th,
+        .feature-table td {
+            padding: 18px 15px;
+            text-align: center;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .feature-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .feature-table tbody tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        .feature-table tbody td:first-child {
+            text-align: left;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .badge-yes {
+            color: var(--green-success);
+            font-weight: 700;
+        }
+        
+        .badge-no {
+            color: #94a3b8;
+            font-style: italic;
+        }
+        
+        .badge-optional {
+            color: var(--warning);
+            font-weight: 600;
+        }
 
-        /* Formulario */
+        /* Servicios */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .service-card h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .service-card p {
+            color: #64748b;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .service-price {
+            font-weight: 700;
+            color: var(--blue-accent);
+            font-size: 1.1rem;
+        }
+
+        /* Formulario mejorado */
         .form-box {
-            max-width: 800px; margin: 60px auto; background: white;
-            padding: 50px; border-radius: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 60px auto;
+            background: white;
+            padding: 50px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-heavy);
         }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%; padding: 15px; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem;
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
         }
-
-        .btn-cta {
-            background: var(--blue-accent); color: white; padding: 20px 40px;
-            border-radius: 50px; text-decoration: none; font-weight: 700;
-            display: inline-block; transition: 0.3s; border: none; cursor: pointer;
-        }
-        .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(37, 99, 235, 0.4); }
-
-        footer { background: #0f172a; color: #94a3b8; padding: 60px 0; text-align: center; }
-
+        
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .segment-grid { grid-template-columns: 1fr; }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+        
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+            background: #f9fafb;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--blue-accent);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            background: white;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
         }
 
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #94a3b8;
+            padding: 60px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        
+        footer strong {
+            color: #cbd5e1;
+        }
 
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .segment-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .price-card.featured {
+                transform: none;
+            }
+            
+            .form-box {
+                padding: 30px;
+            }
+            
+            .wa-float {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .segment-card,
+            .price-card,
+            .form-box {
+                padding: 25px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
 
-
-#features .card {
-    transition: transform 0.3s ease, shadow 0.3s ease;
-}
-
-#features .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-}
-
-#features .icon-box i {
-    color: #0d6efd; /* Color primario de Bootstrap */
-}
-
-#features .text-primary {
-    color: #0d6efd !important;
-}
-
-#features .bg-dark {
-    background-color: #1a1d20 !important;
-}
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
     </style>
 </head>
 <body>
@@ -160,230 +735,116 @@
         DISTRIBUIDOR EXCLUSIVO AUTORIZADO: <strong>WEB SOLUTION</strong>
     </div>
 
+    <header>
+        <div class="container nav-container">
+            <div class="brand">
+                <div class="brand-logo">FF</div>
+                <div class="brand-text">
+                    <strong>Facturación Fácil</strong>
+                    <small>ERP SaaS para Nicaragua</small>
+                </div>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#modulos">Módulos</a>
+                <a href="#planes">Planes</a>
+                <a href="#matriz">Comparación</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#diagnostico">Diagnóstico</a>
+            </nav>
+
+            <a href="#diagnostico" class="btn btn-primary">Solicitar Diagnóstico</a>
+        </div>
+    </header>
+
     <a href="https://wa.me/50585273135?text=Hola,%20solicito%20información%20sobre%20Facturación%20Fácil" class="wa-float" target="_blank">
         <svg width="35" height="35" fill="currentColor" viewBox="0 0 16 16">
             <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.06 3.973L0 16l4.104-1.076a7.858 7.858 0 0 0 3.888 1.035h.001c4.43 0 8.003-3.557 8.003-7.93a7.88 7.88 0 0 0-2.39-5.611zM7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
         </svg>
     </a>
 
-    <header class="hero">
+    <section class="hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content fade-in">
                 <h1>Facturación Fácil:<br>El ERP que Nicaragua necesita.</h1>
                 <p>Gestión completa de inventarios por lotes, control de cajas y carteras en la nube. Automatice su éxito de la mano de WEB SOLUTION.</p>
-                <a href="#diagnostico" class="btn-cta">Solicitar Diagnóstico Técnico</a>
+                <div class="hero-actions">
+                    <a href="#diagnostico" class="btn btn-primary">Solicitar Diagnóstico Técnico</a>
+                    <a href="#planes" class="btn btn-secondary">Ver Planes y Precios</a>
+                </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <section class="container" style="padding: 80px 0;">
-        <div class="section-title">
+    <section class="container" style="padding: 80px 0;" id="modulos">
+        <div class="section-title fade-in">
             <h2>Módulos de Control Total</h2>
             <p>Estructura diseñada para la operatividad real de su negocio.</p>
         </div>
 
-        <div class="segment-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; padding: 20px;">
-
-            <div class="segment-card" style="background: white; padding: 30px; border-radius: 20px; border-top: 8px solid var(--blue-accent); box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
-                <div style="margin-bottom: 20px;">
-                    <span style="background: #eff6ff; padding: 10px; border-radius: 12px; font-size: 1.5rem;">📦</span>
+        <div class="segment-grid">
+            <div class="segment-card fade-in delay-1">
+                <div class="segment-icon" style="background: #eff6ff; color: var(--blue-accent);">
+                    📦
                 </div>
-                <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 15px; font-weight: 800;">Gestión de Inventarios</h3>
-                <ul style="list-style: none; padding: 0; margin-bottom: 25px; flex-grow: 1;">
-                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
-                        <span style="color: var(--blue-accent); margin-right: 10px; font-weight: bold;">•</span>
-                        <span><strong>Control de Lotes:</strong> Trazabilidad total y alertas de vencimiento para evitar mermas.</span>
-                    </li>
-                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
-                        <span style="color: var(--blue-accent); margin-right: 10px; font-weight: bold;">•</span>
-                        <span><strong>Multibodega Real:</strong> Movimientos entre sucursales y bodegas con kárdex histórico auditable.</span>
-                    </li>
-                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
-                        <span style="color: var(--blue-accent); margin-right: 10px; font-weight: bold;">•</span>
-                        <span><strong>Auditoría de Stock:</strong> Ajustes físicos vs sistema protegidos por permisos de supervisor.</span>
-                    </li>
+                <h3>Gestión de Inventarios</h3>
+                <ul>
+                    <li><strong>Control de Lotes:</strong> Trazabilidad total y alertas de vencimiento para evitar mermas.</li>
+                    <li><strong>Multibodega Real:</strong> Movimientos entre sucursales y bodegas con kárdex histórico auditable.</li>
+                    <li><strong>Auditoría de Stock:</strong> Ajustes físicos vs sistema protegidos por permisos de supervisor.</li>
                 </ul>
-                <div style="background: #f8fafc; padding: 12px; border-radius: 10px; border-left: 4px solid var(--blue-accent);">
-                    <small style="color: #64748b; font-weight: 700; text-transform: uppercase; font-size: 0.75rem;">Valor Estratégico</small>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--primary); font-weight: 600;">Cero fugas de mercancía y stock siempre optimizado.</p>
+                <div class="value-box">
+                    <span class="value-label">Valor Estratégico</span>
+                    <p class="value-text">Cero fugas de mercancía y stock siempre optimizado.</p>
                 </div>
             </div>
 
-            <div class="segment-card" style="background: white; padding: 30px; border-radius: 20px; border-top: 8px solid var(--green-success); box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
-                <div style="margin-bottom: 20px;">
-                    <span style="background: #f0fdf4; padding: 10px; border-radius: 12px; font-size: 1.5rem;">⚡</span>
+            <div class="segment-card fade-in delay-2">
+                <div class="segment-icon" style="background: #f0fdf4; color: var(--green-success);">
+                    ⚡
                 </div>
-                <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 15px; font-weight: 800;">Facturación y Ventas</h3>
-                <ul style="list-style: none; padding: 0; margin-bottom: 25px; flex-grow: 1;">
-                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
-                        <span style="color: var(--green-success); margin-right: 10px; font-weight: bold;">•</span>
-                        <span><strong>Facturación Ágil:</strong> Emisión de documentos fiscales bajo normativa vigente en segundos.</span>
-                    </li>
-                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
-                        <span style="color: var(--green-success); margin-right: 10px; font-weight: bold;">•</span>
-                        <span><strong>Control de Cajas:</strong> Apertura, arqueo y cierre de caja detallado por usuario y turno.</span>
-                    </li>
-                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
-                        <span style="color: var(--green-success); margin-right: 10px; font-weight: bold;">•</span>
-                        <span><strong>Venta Omnicanal:</strong> Múltiples listas de precios y gestión de vendedores integrada.</span>
-                    </li>
+                <h3>Facturación y Ventas</h3>
+                <ul>
+                    <li><strong>Facturación Ágil:</strong> Emisión de documentos fiscales bajo normativa vigente en segundos.</li>
+                    <li><strong>Control de Cajas:</strong> Apertura, arqueo y cierre de caja detallado por usuario y turno.</li>
+                    <li><strong>Venta Omnicanal:</strong> Múltiples listas de precios y gestión de vendedores integrada.</li>
                 </ul>
-                <div style="background: #f8fafc; padding: 12px; border-radius: 10px; border-left: 4px solid var(--green-success);">
-                    <small style="color: #64748b; font-weight: 700; text-transform: uppercase; font-size: 0.75rem;">Valor Estratégico</small>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--primary); font-weight: 600;">Atención rápida y control total del dinero en caja.</p>
+                <div class="value-box">
+                    <span class="value-label">Valor Estratégico</span>
+                    <p class="value-text">Atención rápida y control total del dinero en caja.</p>
                 </div>
             </div>
 
-            <div class="segment-card" style="background: white; padding: 30px; border-radius: 20px; border-top: 8px solid #f59e0b; box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
-                <div style="margin-bottom: 20px;">
-                    <span style="background: #fffbeb; padding: 10px; border-radius: 12px; font-size: 1.5rem;">📊</span>
+            <div class="segment-card fade-in delay-3">
+                <div class="segment-icon" style="background: #fffbeb; color: #f59e0b;">
+                    📊
                 </div>
-                <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 15px; font-weight: 800;">Cartera y Cobranza</h3>
-                <ul style="list-style: none; padding: 0; margin-bottom: 25px; flex-grow: 1;">
-                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
-                        <span style="color: #f59e0b; margin-right: 10px; font-weight: bold;">•</span>
-                        <span><strong>Notas de Crédito/Débito:</strong> Gestión profesional de devoluciones y ajustes de saldo.</span>
-                    </li>
-                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
-                        <span style="color: #f59e0b; margin-right: 10px; font-weight: bold;">•</span>
-                        <span><strong>Gestión de Pagos:</strong> Recibos oficiales y aplicación inteligente de abonos a facturas.</span>
-                    </li>
-                    <li style="margin-bottom: 12px; display: flex; align-items: start;">
-                        <span style="color: #f59e0b; margin-right: 10px; font-weight: bold;">•</span>
-                        <span><strong>Límites de Crédito:</strong> Bloqueo automático de facturación para clientes con mora.</span>
-                    </li>
+                <h3>Cartera y Cobranza</h3>
+                <ul>
+                    <li><strong>Notas de Crédito/Débito:</strong> Gestión profesional de devoluciones y ajustes de saldo.</li>
+                    <li><strong>Gestión de Pagos:</strong> Recibos oficiales y aplicación inteligente de abonos a facturas.</li>
+                    <li><strong>Límites de Crédito:</strong> Bloqueo automático de facturación para clientes con mora.</li>
                 </ul>
-                <div style="background: #f8fafc; padding: 12px; border-radius: 10px; border-left: 4px solid #f59e0b;">
-                    <small style="color: #64748b; font-weight: 700; text-transform: uppercase; font-size: 0.75rem;">Valor Estratégico</small>
-                    <p style="margin: 0; font-size: 0.9rem; color: var(--primary); font-weight: 600;">Recuperación de cartera y flujo de caja saludable.</p>
+                <div class="value-box">
+                    <span class="value-label">Valor Estratégico</span>
+                    <p class="value-text">Recuperación de cartera y flujo de caja saludable.</p>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <style>
-        /* Contenedor de rejilla para los planes */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        /* Diseño de la Tarjeta */
-        .price-card {
-            background: white;
-            padding: 40px;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-            .price-card:hover {
-                transform: translateY(-10px);
-                border-color: var(--blue-accent);
-                box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
-            }
-
-            /* Etiqueta de Recomendado */
-            .price-card.featured {
-                border: 2px solid var(--blue-accent);
-                background: #fdfdfd;
-            }
-
-        .featured-label {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--blue-accent);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-        }
-
-        .price-header h3 {
-            font-size: 1.6rem;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-
-        .price-amount {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--blue-accent);
-            margin-bottom: 20px;
-        }
-
-            .price-amount span {
-                font-size: 1rem;
-                color: #64748b;
-                font-weight: 400;
-            }
-
-        /* Límites técnicos destacados */
-        .tech-specs {
-            background: #f8fafc;
-            padding: 15px;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            font-size: 0.9rem;
-            border-left: 4px solid var(--blue-accent);
-        }
-
-        .price-features {
-            list-style: none;
-            margin-bottom: 30px;
-            flex-grow: 1;
-        }
-
-            .price-features li {
-                margin-bottom: 15px;
-                font-size: 0.95rem;
-                display: flex;
-                align-items: center;
-                color: var(--text-main);
-            }
-
-                .price-features li::before {
-                    content: '✓';
-                    color: var(--green-success);
-                    margin-right: 12px;
-                    font-weight: 900;
-                }
-
-        /* Ocultar la tabla vieja en móvil totalmente */
-        @media (max-width: 768px) {
-            .table-desktop {
-                display: none;
-            }
-
-            .pricing-section {
-                padding: 40px 0;
-            }
-        }
-    </style>
-
     <section class="pricing-section" id="planes">
         <div class="container">
-            <div class="section-title" style="text-align: center; margin-bottom: 50px;">
-                <h2 style="font-size: 2.5rem;">Planes de Suscripción</h2>
-                <p style="color: #64748b; margin-bottom: 10px;">Gestión profesional operada por WEB SOLUTION. Facturación según tasa BCN.</p>
-                <div style="display: inline-block; background: #fef3c7; color: #92400e; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; border: 1px solid #f59e0b;">
+            <div class="section-title fade-in">
+                <h2>Planes de Suscripción</h2>
+                <p>Gestión profesional operada por WEB SOLUTION. Facturación según tasa BCN.</p>
+                <div style="display: inline-block; background: #fef3c7; color: #92400e; padding: 10px 25px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; border: 1px solid #f59e0b; margin-top: 15px;">
                     🔥 Ahorra 5% en pagos Semestrales y 10% en Anuales
                 </div>
             </div>
 
             <div class="pricing-grid">
-
-                <div class="price-card">
+                <div class="price-card fade-in delay-1">
                     <div class="price-header">
                         <h3>Basic</h3>
                         <div class="price-amount">$75 <span>/ trimestral</span></div>
@@ -405,10 +866,10 @@
                         <li>Gestión de Lotes Básica</li>
                         <li>Soporte vía Ticket</li>
                     </ul>
-                    <a href="#diagnostico" class="btn-cta" style="text-align:center;">Seleccionar Basic</a>
+                    <a href="#diagnostico" class="btn btn-primary" style="justify-content: center; margin-top: auto;">Seleccionar Basic</a>
                 </div>
 
-                <div class="price-card featured">
+                <div class="price-card featured fade-in">
                     <div class="featured-label">Más Popular</div>
                     <div class="price-header">
                         <h3>Professional</h3>
@@ -432,10 +893,10 @@
                         <li>Módulo de Cartera (CxC)</li>
                         <li>Soporte Remoto Estándar</li>
                     </ul>
-                    <a href="#diagnostico" class="btn-cta" style="text-align:center;">Seleccionar Pro</a>
+                    <a href="#diagnostico" class="btn btn-primary" style="justify-content: center; margin-top: auto;">Seleccionar Pro</a>
                 </div>
 
-                <div class="price-card">
+                <div class="price-card fade-in delay-2">
                     <div class="price-header">
                         <h3>Enterprise</h3>
                         <div class="price-amount">$240 <span>/ trimestral</span></div>
@@ -457,92 +918,131 @@
                         <li>Historial de Movimientos Pro</li>
                         <li>Soporte Prioritario 24/7</li>
                     </ul>
-                    <a href="#diagnostico" class="btn-cta" style="text-align:center;">Seleccionar Enterprise</a>
+                    <a href="#diagnostico" class="btn btn-primary" style="justify-content: center; margin-top: auto;">Seleccionar Enterprise</a>
                 </div>
-
             </div>
         </div>
     </section>
 
+    <section style="padding: 60px 0; background-color: var(--white);" id="matriz">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Matriz de Funcionalidades por Plan</h2>
+                <p>Compare las capacidades de cada plan para elegir el que mejor se adapta a su negocio</p>
+            </div>
 
-
-    <section style="padding: 60px 0; background-color: var(--white);">
-        <div class="container text-center">
-            <h2 style="color: var(--primary); font-weight: 800; margin-bottom: 40px;">Matriz de Funcionalidades por Plan</h2>
-
-            <div style="overflow-x: auto;">
-                <table style="width: 100%; border-collapse: collapse; min-width: 900px; text-align: left;">
+            <div class="feature-matrix">
+                <table class="feature-table">
                     <thead>
-                        <tr style="background-color: var(--primary); color: white;">
-                            <th style="padding: 15px; border-radius: 8px 0 0 0;">Funcionalidad / Capacidad</th>
-                            <th style="padding: 15px; text-align: center;">Plan Basic</th>
-                            <th style="padding: 15px; text-align: center;">Plan Professional</th>
-                            <th style="padding: 15px; text-align: center; border-radius: 0 8px 0 0;">Enterprise / NGO</th>
+                        <tr>
+                            <th style="border-radius: var(--radius-sm) 0 0 0;">Funcionalidad / Capacidad</th>
+                            <th>Plan Basic</th>
+                            <th>Plan Professional</th>
+                            <th style="border-radius: 0 var(--radius-sm) 0 0;">Plan Enterprise</th>
                         </tr>
                     </thead>
-                    <tbody style="font-size: 0.95rem; color: var(--text-main);">
-                        <tr style="border-bottom: 1px solid #e2e8f0;">
-                            <td style="padding: 15px; font-weight: 600;">Usuarios Incluidos</td>
-                            <td style="padding: 15px; text-align: center;">Hasta 2</td>
-                            <td style="padding: 15px; text-align: center;">Hasta 10</td>
-                            <td style="padding: 15px; text-align: center;">Hasta 50</td>
+                    <tbody>
+                        <tr>
+                            <td>Usuarios Incluidos</td>
+                            <td>Hasta 2</td>
+                            <td>Hasta 10</td>
+                            <td>Hasta 50</td>
                         </tr>
-                        <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f8fafc;">
-                            <td style="padding: 15px; font-weight: 600;">Ventas al Crédito (CxC)</td>
-                            <td style="padding: 15px; text-align: center; color: #94a3b8;">No (Solo contado)</td>
-                            <td style="padding: 15px; text-align: center; color: var(--blue-accent); font-weight: 600;">Completo</td>
-                            <td style="padding: 15px; text-align: center; color: var(--blue-accent); font-weight: 600;">Completo</td>
+                        <tr>
+                            <td>Ventas al Crédito (CxC)</td>
+                            <td class="badge-no">No (Solo contado)</td>
+                            <td class="badge-yes">Completo</td>
+                            <td class="badge-yes">Completo</td>
                         </tr>
-                        <tr style="border-bottom: 1px solid #e2e8f0;">
-                            <td style="padding: 15px; font-weight: 600;">Control de Lotes y Vencimientos</td>
-                            <td style="padding: 15px; text-align: center; font-style: italic;">Opcional</td>
-                            <td style="padding: 15px; text-align: center; color: var(--green-success);">✔ Incluido</td>
-                            <td style="padding: 15px; text-align: center; color: var(--green-success);">✔ Incluido</td>
+                        <tr>
+                            <td>Control de Lotes y Vencimientos</td>
+                            <td class="badge-optional">Opcional</td>
+                            <td class="badge-yes">✔ Incluido</td>
+                            <td class="badge-yes">✔ Incluido</td>
                         </tr>
-                        <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f8fafc;">
-                            <td style="padding: 15px; font-weight: 600;">Gestión de Bodegas</td>
-                            <td style="padding: 15px; text-align: center; color: #f87171;">
-                                <span style="display: block; font-size: 0.9rem; font-weight: bold;">✘ No</span>
-                                <small style="font-size: 0.75rem; color: #94a3b8;">(Solo 2 bodega principal)</small>
+                        <tr>
+                            <td>Gestión de Bodegas</td>
+                            <td>
+                                <span class="badge-no">✘ No</span><br>
+                                <small style="font-size: 0.75rem;">(Solo 2 bodega principal)</small>
                             </td>
-                            <td style="padding: 15px; text-align: center; color: var(--green-success);">
-                                <span style="display: block; font-size: 0.9rem; font-weight: bold;">✔ Hasta 3</span>
-                                <small style="font-size: 0.75rem; color: var(--text-main);">Bodegas independientes</small>
+                            <td>
+                                <span class="badge-yes">✔ Hasta 3</span><br>
+                                <small style="font-size: 0.75rem;">Bodegas independientes</small>
                             </td>
-                            <td style="padding: 15px; text-align: center; color: var(--blue-accent);">
-                                <span style="display: block; font-size: 0.9rem; font-weight: bold;">✔ Ilimitadas</span>
-                                <small style="font-size: 0.75rem; color: var(--text-main);">O según contrato NGO</small>
+                            <td>
+                                <span class="badge-yes">✔ Ilimitadas</span><br>
+                                <small style="font-size: 0.75rem;">O según contrato</small>
                             </td>
                         </tr>
-                        <tr style="border-bottom: 1px solid #e2e8f0;">
-                            <td style="padding: 15px; font-weight: 600;">Multisucursal</td>
-                            <td style="padding: 15px; text-align: center; color: #94a3b8;">No (1 fija)</td>
-                            <td style="padding: 15px; text-align: center;">3 sucursales</td>
-                            <td style="padding: 15px; text-align: center; font-weight: 600;">3 x Empresa</td>
+                        <tr>
+                            <td>Multisucursal</td>
+                            <td class="badge-no">No (1 fija)</td>
+                            <td>3 sucursales</td>
+                            <td>3 x Empresa</td>
                         </tr>
-                        <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f8fafc;">
-                            <td style="padding: 15px; font-weight: 600;">Multiempresa</td>
-                            <td style="padding: 15px; text-align: center; color: #f87171;">✘ No</td>
-                            <td style="padding: 15px; text-align: center; color: #f87171;">✘ No</td>
-                            <td style="padding: 15px; text-align: center; font-weight: 600; color: var(--blue-accent);">Hasta 5 Empresas</td>
+                        <tr>
+                            <td>Multiempresa</td>
+                            <td class="badge-no">✘ No</td>
+                            <td class="badge-no">✘ No</td>
+                            <td class="badge-yes">Hasta 5 Empresas</td>
                         </tr>
-                        <tr style="border-bottom: 1px solid #e2e8f0;">
-                            <td style="padding: 15px; font-weight: 600;">Auditoría y Roles</td>
-                            <td style="padding: 15px; text-align: center; color: #94a3b8;">Básica</td>
-                            <td style="padding: 15px; text-align: center;">Parcial</td>
-                            <td style="padding: 15px; text-align: center; font-weight: 600; color: var(--blue-accent);">Completa</td>
+                        <tr>
+                            <td>Auditoría y Roles</td>
+                            <td class="badge-no">Básica</td>
+                            <td>Parcial</td>
+                            <td class="badge-yes">Completa</td>
                         </tr>
-                        <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f0fdf4;">
-                            <td style="padding: 15px; font-weight: 600;">Hospedaje Cloud y Respaldo</td>
-                            <td style="padding: 15px; text-align: center; color: var(--green-success);">✔ Incluido</td>
-                            <td style="padding: 15px; text-align: center; color: var(--green-success);">✔ Incluido</td>
-                            <td style="padding: 15px; text-align: center; color: var(--green-success);">✔ Incluido</td>
+                        <tr>
+                            <td>Hospedaje Cloud y Respaldo</td>
+                            <td class="badge-yes">✔ Incluido</td>
+                            <td class="badge-yes">✔ Incluido</td>
+                            <td class="badge-yes">✔ Incluido</td>
+                        </tr>
+                        <tr>
+                            <td>Soporte Técnico</td>
+                            <td>Vía Ticket</td>
+                            <td>Remoto Estándar</td>
+                            <td class="badge-yes">Prioritario 24/7</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <p style="margin-top: 20px; font-size: 0.85rem; color: #64748b; font-style: italic;">
+            <p style="margin-top: 20px; font-size: 0.85rem; color: #64748b; font-style: italic; text-align: center;">
                 * El acceso y capacidad operativa están sujetos al nivel de suscripción activa según los términos del modelo SaaS 2026.
+            </p>
+        </div>
+    </section>
+
+    <section style="padding: 60px 0; background-color: var(--bg-light);" id="servicios">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Servicios de Implementación</h2>
+                <p>Aseguramos que tu sistema rinda al 100% desde el primer día con nuestros servicios profesionales</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card fade-in delay-1">
+                    <h4>Plan Basic</h4>
+                    <p>Configuración inicial de empresa e impuestos, 1 a 2 sesiones de capacitación (Caja y Facturación).</p>
+                    <div class="service-price">Inversión: 80 – 120 USD*</div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <h4>Plan Professional</h4>
+                    <p>Configuración de bodegas, productos y créditos. Capacitación a cajeros, inventario y cobranza. Acompañamiento en el primer cierre de mes.</p>
+                    <div class="service-price">Inversión: 150 – 250 USD*</div>
+                </div>
+
+                <div class="service-card fade-in delay-2">
+                    <h4>Enterprise / NGO</h4>
+                    <p>Parametrización avanzada y centros de costo. Diseño de roles (Cajeros, Supervisores, Auditores). Entrenamiento especializado por cada área.</p>
+                    <div class="service-price">Inversión: Según Complejidad*</div>
+                </div>
+            </div>
+
+            <p style="text-align: center; font-size: 0.9rem; margin-top: 30px; color: #64748b;">
+                * El costo de implementación es un pago único (fee) por empresa. Incluye migración de datos y capacitación.
             </p>
         </div>
     </section>
@@ -592,96 +1092,6 @@
 
 
             </div>
-        </div>
-    </section>
-
-    <section style="padding: 60px 0; background-color: var(--white);">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
-                <div>
-                    <h2 style="font-size: 2rem; color: var(--primary); margin-bottom: 20px;">Tu Inversión, Tu Información</h2>
-                    <p style="margin-bottom: 15px;">Al suscribirte a <strong>Facturación Fácil</strong> bajo el modelo SaaS, obtienes un servicio "todo incluido" donde nosotros nos encargamos de la infraestructura y tú te enfocas en vender.</p>
-
-                    <div style="display: flex; gap: 15px; margin-top: 25px;">
-                        <div style="color: var(--blue-accent); font-size: 1.5rem;">✔</div>
-                        <div>
-                            <strong>Propiedad de los Datos:</strong> Según la Cláusula 4 de nuestros términos, usted es el único dueño de su información. El sistema es solo el medio para gestionarla.
-                        </div>
-                    </div>
-                    <div style="display: flex; gap: 15px; margin-top: 20px;">
-                        <div style="color: var(--blue-accent); font-size: 1.5rem;">✔</div>
-                        <div>
-                            <strong>Continuidad del Negocio:</strong> En caso de finalizar la suscripción, dispondrá de 30 días calendario para exportar su información básica desde la plataforma.
-                        </div>
-                    </div>
-                </div>
-                <div style="background-color: var(--bg-light); padding: 30px; border-radius: 12px; border-left: 5px solid var(--blue-accent);">
-                    <h3 style="margin-bottom: 15px; font-size: 1.2rem;">Requisitos para un óptimo funcionamiento:</h3>
-                    <ul style="list-style: none; font-size: 0.9rem; line-height: 1.8;">
-                        <li>🌐 <strong>Conexión:</strong> Internet estable (Fibra óptica recomendada).</li>
-                        <li>💻 <strong>Hardware:</strong> Procesador i3 o superior y mínimo 8GB de RAM.</li>
-                        <li>🌍 <strong>Navegador:</strong> Versiones actualizadas de Chrome, Edge o Firefox.</li>
-                        <li>⚖️ <strong>Legal:</strong> El suscriptor es responsable de la veracidad de los datos fiscales registrados.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="padding: 40px 0; background-color: #f1f5f9; border-top: 1px solid #e2e8f0;">
-        <div class="container text-center">
-            <h3 style="margin-bottom: 30px;">Claridad en tu Suscripción</h3>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-                <div style="background: white; padding: 20px; border-radius: 8px; width: 250px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                    <span style="color: var(--green-success); font-weight: bold;">● Estado Activo</span>
-                    <p style="font-size: 0.85rem; color: #64748b; mt-2">Acceso total a todas las funciones y soporte técnico.</p>
-                </div>
-                <div style="background: white; padding: 20px; border-radius: 8px; width: 250px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                    <span style="color: #f59e0b; font-weight: bold;">● Estado Expirado</span>
-                    <p style="font-size: 0.85rem; color: #64748b; mt-2">Por falta de pago, el sistema entra en <strong>Modo Solo Lectura</strong> para que no pierdas acceso a tus reportes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="padding: 60px 0; background-color: var(--bg-light);">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 style="color: var(--primary); font-weight: 800;">Servicios de Implementación</h2>
-                <p style="color: var(--blue-accent); font-weight: 600;">Aseguramos que tu sistema rinda al 100% desde el primer día</p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-                <div style="background: white; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0;">
-                    <h4 style="font-size: 1.1rem; border-bottom: 2px solid #cbd5e1; padding-bottom: 10px; margin-bottom: 15px;">Plan Basic</h4>
-                    <ul style="list-style: none; font-size: 0.9rem; color: #64748b; padding: 0;">
-                        <li style="margin-bottom: 10px;">• Configuración inicial de empresa e impuestos.</li>
-                        <li style="margin-bottom: 10px;">• 1 a 2 sesiones de capacitación (Caja y Facturación).</li>
-                    </ul>
-                    <p style="margin-top: 20px; font-weight: bold; color: var(--primary);">Inversión: 80 – 120 USD*</p>
-                </div>
-
-                <div style="background: white; padding: 25px; border-radius: 12px; border: 2px solid var(--blue-accent);">
-                    <h4 style="font-size: 1.1rem; border-bottom: 2px solid var(--blue-accent); padding-bottom: 10px; margin-bottom: 15px;">Plan Professional</h4>
-                    <ul style="list-style: none; font-size: 0.9rem; color: #64748b; padding: 0;">
-                        <li style="margin-bottom: 10px;">• Configuración de bodegas, productos y créditos.</li>
-                        <li style="margin-bottom: 10px;">• Capacitación a cajeros, inventario y cobranza.</li>
-                        <li style="margin-bottom: 10px;">• Acompañamiento en el primer cierre de mes.</li>
-                    </ul>
-                    <p style="margin-top: 20px; font-weight: bold; color: var(--blue-accent);">Inversión: 150 – 250 USD*</p>
-                </div>
-
-                <div style="background: white; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0;">
-                    <h4 style="font-size: 1.1rem; border-bottom: 2px solid #cbd5e1; padding-bottom: 10px; margin-bottom: 15px;">Enterprise / NGO</h4>
-                    <ul style="list-style: none; font-size: 0.9rem; color: #64748b; padding: 0;">
-                        <li style="margin-bottom: 10px;">• Parametrización avanzada y centros de costo.</li>
-                        <li style="margin-bottom: 10px;">• Diseño de roles (Cajeros, Supervisores, Auditores).</li>
-                        <li style="margin-bottom: 10px;">• Entrenamiento especializado por cada área.</li>
-                    </ul>
-                    <p style="margin-top: 20px; font-weight: bold; color: var(--primary);">Inversión: Según Complejidad*</p>
-                </div>
-            </div>
-            <p style="text-align: center; font-size: 0.8rem; margin-top: 20px; color: #94a3b8;">* El costo de implementación es un pago único (fee) por empresa.</p>
         </div>
     </section>
 
@@ -754,218 +1164,156 @@
         </div>
     </section>
 
-    <div class="segment-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; padding: 40px 20px; background-color: #f1f5f9; border-radius: 25px; margin: 20px 0;">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
 
-        <div class="impact-card" style="background: white; padding: 35px; border-radius: 20px; border-left: 8px solid #2563eb; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); position: relative; overflow: hidden;">
-            <div style="position: absolute; top: -10px; right: -10px; opacity: 0.05;">
-                <span style="font-size: 100px;">🛡️</span>
-            </div>
-            <h3 style="color: #1e3a8a; font-size: 1.6rem; margin-bottom: 20px; font-weight: 800; display: flex; align-items: center;">
-                <span style="margin-right: 12px;">🛡️</span> Escudo de Supervisión
-            </h3>
-            <p style="font-size: 1.1rem; line-height: 1.6; color: #334155; margin-bottom: 20px;">
-                Su sistema cuenta con una capa de protección inteligente: el cajero opera con total agilidad, pero las <strong>decisiones críticas que afectan su patrimonio</strong> pasan obligatoriamente por un filtro de autorización.
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                <span style="background: #dbeafe; color: #1e40af; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">Anulaciones</span>
-                <span style="background: #dbeafe; color: #1e40af; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">Créditos a Morosos</span>
-                <span style="background: #dbeafe; color: #1e40af; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">Lotes Vencidos</span>
-            </div>
-            <p style="margin-top: 20px; font-weight: 600; color: #2563eb; border-top: 1px solid #e2e8f0; pt: 15px; padding-top: 15px;">
-                Dándole a usted el control total sin necesidad de estar presente físicamente.
-            </p>
-        </div>
+        <div class="segment-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; padding: 30px; background-color: #f1f5f9; border-radius: 20px; margin: 20px 0;">
 
-        <div class="impact-card" style="background: white; padding: 35px; border-radius: 20px; border-left: 8px solid #10b981; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); position: relative; overflow: hidden;">
-            <div style="position: absolute; top: -10px; right: -10px; opacity: 0.05;">
-                <span style="font-size: 100px;">💵</span>
-            </div>
-            <h3 style="color: #064e3b; font-size: 1.6rem; margin-bottom: 20px; font-weight: 800; display: flex; align-items: center;">
-                <span style="margin-right: 12px;">💰</span> Blindaje de Efectivo
-            </h3>
-            <p style="font-size: 1.1rem; line-height: 1.6; color: #334155; margin-bottom: 20px;">
-                Cada salida de dinero que no sea por venta (gastos menudos o depósitos) puede ser configurada para requerir la <strong>aprobación digital inmediata</strong> de un supervisor.
-            </p>
-            <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
-                <li style="display: flex; align-items: center; margin-bottom: 10px;">
-                    <span style="color: #10b981; margin-right: 10px;">✔</span> Anulaciones exclusivas para Gerencia.
-                </li>
-                <li style="display: flex; align-items: center; margin-bottom: 10px;">
-                    <span style="color: #10b981; margin-right: 10px;">✔</span> Historial inalterable de movimientos manuales.
-                </li>
-            </ul>
-            <div style="background: #ecfdf5; padding: 15px; border-radius: 12px; border: 1px dashed #10b981;">
-                <p style="margin: 0; font-size: 0.95rem; color: #065f46; font-weight: 700; text-align: center;">
-                    Asegure que cada centavo en caja esté respaldado y auditado.
+            <div class="impact-card" style="background: white; padding: 25px; border-radius: 15px; border-left: 6px solid #2563eb; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -5px; right: -5px; opacity: 0.05;">
+                    <span style="font-size: 80px;">🛡️</span>
+                </div>
+                <h3 style="color: #1e3a8a; font-size: 1.4rem; margin-bottom: 15px; font-weight: 800; display: flex; align-items: center;">
+                    <span style="margin-right: 10px;">🛡️</span> Escudo de Supervisión
+                </h3>
+                <p style="font-size: 1rem; line-height: 1.5; color: #475569; margin-bottom: 15px;">
+                    Su sistema cuenta con una capa de protección inteligente: las <strong>decisiones críticas</strong> pasan obligatoriamente por un filtro de autorización.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span style="background: #dbeafe; color: #1e40af; padding: 4px 10px; border-radius: 15px; font-size: 0.75rem; font-weight: 700;">Anulaciones</span>
+                    <span style="background: #dbeafe; color: #1e40af; padding: 4px 10px; border-radius: 15px; font-size: 0.75rem; font-weight: 700;">Morosos</span>
+                    <span style="background: #dbeafe; color: #1e40af; padding: 4px 10px; border-radius: 15px; font-size: 0.75rem; font-weight: 700;">Vencidos</span>
+                </div>
+                <p style="margin-top: 15px; font-weight: 600; color: #2563eb; border-top: 1px solid #f1f5f9; padding-top: 12px; font-size: 0.9rem;">
+                    Control total sin necesidad de estar presente.
                 </p>
             </div>
-        </div>
 
+            <div class="impact-card" style="background: white; padding: 25px; border-radius: 15px; border-left: 6px solid #10b981; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -5px; right: -5px; opacity: 0.05;">
+                    <span style="font-size: 80px;">💵</span>
+                </div>
+                <h3 style="color: #064e3b; font-size: 1.4rem; margin-bottom: 15px; font-weight: 800; display: flex; align-items: center;">
+                    <span style="margin-right: 10px;">💰</span> Blindaje de Efectivo
+                </h3>
+                <p style="font-size: 1rem; line-height: 1.5; color: #475569; margin-bottom: 15px;">
+                    Cada salida de dinero (gastos o depósitos) puede requerir la <strong>aprobación digital inmediata</strong> de un supervisor.
+                </p>
+                <ul style="list-style: none; padding: 0; margin-bottom: 15px; font-size: 0.9rem;">
+                    <li style="display: flex; align-items: center; margin-bottom: 8px;">
+                        <span style="color: #10b981; margin-right: 8px;">✔</span> Anulaciones exclusivas.
+                    </li>
+                    <li style="display: flex; align-items: center; margin-bottom: 8px;">
+                        <span style="color: #10b981; margin-right: 8px;">✔</span> Historial inalterable.
+                    </li>
+                </ul>
+                <div style="background: #f0fdf4; padding: 12px; border-radius: 10px; border: 1px dashed #10b981;">
+                    <p style="margin: 0; font-size: 0.85rem; color: #166534; font-weight: 700; text-align: center;">
+                        Caja respaldada y auditada al 100%.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <section style="padding: 40px 0; background-color: var(--white);">
-        <div class="container">
-            <div style="background-color: #f8fafc; border-radius: 15px; padding: 30px; display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-around; align-items: center; border: 1px dashed #cbd5e1;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 40px 20px; font-family: 'Inter', sans-serif;">
 
-                <div style="max-width: 250px; text-align: center;">
-                    <div style="font-size: 1.5rem; margin-bottom: 10px;">🗓️</div>
-                    <h5 style="font-size: 1rem; font-weight: bold;">Contratación Mínima</h5>
-                    <p style="font-size: 0.85rem; color: #64748b;">Períodos trimestrales. Descuentos en pagos semestrales o anuales.</p>
-                </div>
-
-                <div style="max-width: 250px; text-align: center;">
-                    <div style="font-size: 1.5rem; margin-bottom: 10px;">💵</div>
-                    <h5 style="font-size: 1rem; font-weight: bold;">Moneda y Facturación</h5>
-                    <p style="font-size: 0.85rem; color: #64748b;">Precios en USD. Se factura en Córdobas según el tipo de cambio oficial vigente.</p>
-                </div>
-
-                <div style="max-width: 250px; text-align: center;">
-                    <div style="font-size: 1.5rem; margin-bottom: 10px;">☁️</div>
-                    <h5 style="font-size: 1rem; font-weight: bold;">Infraestructura Cloud</h5>
-                    <p style="font-size: 0.85rem; color: #64748b;">Hospedaje seguro con respaldos diarios para la continuidad de su negocio.</p>
-                </div>
-
-            </div>
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="font-family: 'Poppins', sans-serif; font-weight: 800; color: #0f172a; font-size: 2.2rem; margin-bottom: 15px;">
+                ¿Por qué <span style="color: #2563eb;">Facturación Fácil</span> es tu mejor aliado?
+            </h2>
+            <p style="font-size: 1.2rem; color: #64748b; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                Diseñamos tecnología que no solo cuenta números, sino que <strong>libera tu tiempo</strong> y protege tu patrimonio.
+            </p>
         </div>
-    </section>
 
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;">
 
-
-
-    <section id="features" class="py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold text-primary">¿Por qué Facturación Fácil es diferente?</h2>
-                <p class="lead text-muted">Los cimientos de tu tranquilidad</p>
-                <p class="mx-auto" style="max-width: 800px;">
-                    Detrás de cada factura y cada movimiento de inventario, existe una ingeniería diseñada para que el sistema nunca sea un obstáculo, sino un motor de crecimiento.
+            <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+                <div style="color: #2563eb; margin-bottom: 20px; font-size: 2rem;">⚡</div>
+                <h5 style="font-weight: 700; color: #1e293b; margin-bottom: 12px; font-size: 1.2rem;">Velocidad que Sorprende</h5>
+                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">
+                    Navega entre facturas y reportes al instante. Gracias a la tecnología <strong>Blazor</strong>, tu sistema web vuela como si estuviera instalado en tu propia PC.
                 </p>
             </div>
 
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body">
-                            <div class="icon-box mb-3 text-primary">
-                                <i class="bi bi-lightning-charge-fill fs-2"></i>
-                            </div>
-                            <h5 class="card-title fw-bold text-dark">Experiencia de App Moderna</h5>
-                            <p class="card-text small text-secondary"><strong>¿Qué es?</strong> Usamos tecnología <strong>Blazor</strong>, que permite que la web se comporte como una aplicación instalada.</p>
-                            <p class="card-text text-muted">La interfaz es ultra rápida y fluida. Navega entre facturas y reportes al instante, sin esperas molestas.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm border-0 border-top border-primary border-4">
-                        <div class="card-body">
-                            <div class="icon-box mb-3 text-primary">
-                                <i class="bi bi-layers-half fs-2"></i>
-                            </div>
-                            <h5 class="card-title fw-bold text-dark">Arquitectura Limpia</h5>
-                            <p class="card-text small text-secondary"><strong>¿Qué es?</strong> Un diseño modular que separa la lógica de tu negocio de la base de datos.</p>
-                            <p class="card-text text-muted">Tu inversión está protegida. El sistema es fácil de evolucionar y permite añadir funciones sin reconstruir todo desde cero.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body">
-                            <div class="icon-box mb-3 text-primary">
-                                <i class="bi bi-box-seam fs-2"></i>
-                            </div>
-                            <h5 class="card-title fw-bold text-dark">Cerebro que se Adapta</h5>
-                            <p class="card-text small text-secondary"><strong>¿Qué es?</strong> Control de lotes y vencimientos <strong>opcional</strong> por producto.</p>
-                            <p class="card-text text-muted">Agilidad para productos generales y control estricto para productos críticos, evitando pérdidas por vencimientos.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body">
-                            <div class="icon-box mb-3 text-primary">
-                                <i class="bi bi-shield-lock-fill fs-2"></i>
-                            </div>
-                            <h5 class="card-title fw-bold text-dark">Supervisión y Control</h5>
-                            <p class="card-text small text-secondary"><strong>¿Qué es?</strong> "Pasaportes digitales" para operaciones sensibles que requieren autorización.</p>
-                            <p class="card-text text-muted">Solo supervisores autorizados pueden desbloquear lotes o ventas vencidas, garantizando que tus reglas se cumplan.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body">
-                            <div class="icon-box mb-3 text-primary">
-                                <i class="bi bi-speedometer2 fs-2"></i>
-                            </div>
-                            <h5 class="card-title fw-bold text-dark">Información al Instante</h5>
-                            <p class="card-text small text-secondary"><strong>¿Qué es?</strong> Tecnología de doble vía que separa el registro de la lectura de datos.</p>
-                            <p class="card-text text-muted">Factura a máxima velocidad mientras generas reportes complejos sin que el sistema se ponga lento.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm border-0" style="background-color: #f8f9fa; border: 1px solid #e9ecef !important;">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="bi bi-code-slash text-primary me-2 fs-4"></i>
-                                <h5 class="card-title fw-bold text-dark mb-0">Resumen para tu TI</h5>
-                            </div>
-                            <ul class="list-unstyled small mt-2">
-                                <li class="d-flex justify-content-between mb-2 border-bottom pb-1">
-                                    <span class="text-secondary font-monospace">Frontend:</span>
-                                    <span class="fw-bold text-dark">Blazor / MudBlazor</span>
-                                </li>
-                                <li class="d-flex justify-content-between mb-2 border-bottom pb-1">
-                                    <span class="text-secondary font-monospace">Backend:</span>
-                                    <span class="fw-bold text-dark">.NET 9 / C#</span>
-                                </li>
-                                <li class="d-flex justify-content-between mb-2 border-bottom pb-1">
-                                    <span class="text-secondary font-monospace">Base de Datos:</span>
-                                    <span class="fw-bold text-dark">SQL Server 2022</span>
-                                </li>
-                                <li class="d-flex justify-content-between">
-                                    <span class="text-secondary font-monospace">Arquitectura:</span>
-                                    <span class="fw-bold text-dark">Clean Arch + CQRS</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div style="background: white; padding: 30px; border-radius: 20px; border-top: 5px solid #2563eb; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+                <div style="color: #2563eb; margin-bottom: 20px; font-size: 2rem;">🏗️</div>
+                <h5 style="font-weight: 700; color: #1e293b; margin-bottom: 12px; font-size: 1.2rem;">Inversión para el Futuro</h5>
+                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">
+                    Construido con <strong>Arquitectura Limpia</strong>. Tu software no quedará obsoleto; está listo para crecer y adaptarse a nuevas funciones sin errores.
+                </p>
             </div>
+
+            <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+                <div style="color: #2563eb; margin-bottom: 20px; font-size: 2rem;">🧠</div>
+                <h5 style="font-weight: 700; color: #1e293b; margin-bottom: 12px; font-size: 1.2rem;">Cerebro Adaptable</h5>
+                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">
+                    Tú decides qué controlar. Activa el control de <strong>lotes y vencimientos</strong> solo en productos críticos y mantén la agilidad en el resto.
+                </p>
+            </div>
+
+            <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+                <div style="color: #2563eb; margin-bottom: 20px; font-size: 2rem;">🔐</div>
+                <h5 style="font-weight: 700; color: #1e293b; margin-bottom: 12px; font-size: 1.2rem;">Tus Reglas se Cumplen</h5>
+                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">
+                    Operaciones sensibles requieren "pasaportes digitales". Autoriza de forma remota ventas de productos vencidos o desbloqueo de lotes.
+                </p>
+            </div>
+
+            <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+                <div style="color: #2563eb; margin-bottom: 20px; font-size: 2rem;">📊</div>
+                <h5 style="font-weight: 700; color: #1e293b; margin-bottom: 12px; font-size: 1.2rem;">Datos sin Cuellos de Botella</h5>
+                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6;">
+                    Sigue facturando a máxima velocidad mientras gerencia extrae reportes pesados. Gracias a <strong>CQRS</strong>, el sistema nunca se detiene.
+                </p>
+            </div>
+
+            <div style="background: #1e293b; padding: 30px; border-radius: 20px; color: white;">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <span style="font-size: 1.5rem; margin-right: 10px;">💻</span>
+                    <h5 style="font-weight: 700; margin: 0; font-size: 1.1rem; color: #60a5fa;">ADN Tecnológico (Para tu TI)</h5>
+                </div>
+                <ul style="list-style: none; padding: 0; font-size: 0.85rem; font-family: monospace;">
+                    <li style="border-bottom: 1px solid #334155; padding: 8px 0; display: flex; justify-content: space-between;">
+                        <span>FRONT:</span> <span style="color: #93c5fd;">Blazor / .NET 9</span>
+                    </li>
+                    <li style="border-bottom: 1px solid #334155; padding: 8px 0; display: flex; justify-content: space-between;">
+                        <span>BACK:</span> <span style="color: #93c5fd;">C# / CQRS</span>
+                    </li>
+                    <li style="border-bottom: 1px solid #334155; padding: 8px 0; display: flex; justify-content: space-between;">
+                        <span>DB:</span> <span style="color: #93c5fd;">SQL Server 2022</span>
+                    </li>
+                    <li style="padding: 8px 0; display: flex; justify-content: space-between;">
+                        <span>CLOUD:</span> <span style="color: #93c5fd;">Azure Ready</span>
+                    </li>
+                </ul>
+            </div>
+
         </div>
-    </section>
+    </div>
 
-
-
-    <section id="diagnostico" class="container" style="padding: 80px 0;">
-        <div class="form-box">
+    <section id="diagnostico" style="padding: 80px 0;">
+        <div class="form-box fade-in">
             <h2 style="text-align: center; color: var(--primary); margin-bottom: 10px;">Solicitud de Diagnóstico Técnico</h2>
-            <p style="text-align: center; margin-bottom: 30px; color: #64748b; font-size: 0.9rem;">
+            <p style="text-align: center; margin-bottom: 30px; color: #64748b; font-size: 0.95rem;">
                 Exclusivo para clientes de <strong>WEB SOLUTION</strong>. <br>
-                <span style="color: #e11d48;">* El diagnóstico es gratuito; la ejecución de la migración tiene un costo adicional.</span>
+                <span style="color: var(--danger); font-weight: 600;">* El diagnóstico es gratuito; la ejecución de la migración tiene un costo adicional.</span>
             </p>
 
-            <form id="contactForm" class="grid-form">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <form id="contactForm">
+                <div class="form-grid">
                     <div class="form-group">
-                        <label>Razón Social / RUC</label>
+                        <label>Razón Social / RUC *</label>
                         <input type="text" id="empresa" required placeholder="Nombre legal de la empresa">
                     </div>
                     <div class="form-group">
-                        <label>WhatsApp de Contacto</label>
+                        <label>WhatsApp de Contacto *</label>
                         <input type="tel" id="telefono" required placeholder="8888-8888">
                     </div>
-                </div>
-
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
                     <div class="form-group">
-                        <label>Sistema de Origen (Donde están sus datos hoy)</label>
-                        <select id="sistema_origen">
+                        <label>Sistema de Origen *</label>
+                        <select id="sistema_origen" required>
+                            <option value="">Seleccione una opción</option>
                             <option value="excel">Excel / Hojas de Cálculo</option>
                             <option value="quickbooks">Quickbooks / Peachtree</option>
                             <option value="monica">Mónica / Softland</option>
@@ -974,21 +1322,33 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Número de Sucursales</label>
-                        <input type="number" id="sucursales" min="1" value="1">
+                        <label>Número de Sucursales *</label>
+                        <input type="number" id="sucursales" min="1" value="1" required>
                     </div>
                 </div>
 
-                <div class="form-group" style="margin-top: 15px;">
+                <div class="form-group">
+                    <label>Plan de interés</label>
+                    <select id="plan_interes">
+                        <option value="basic">Plan Basic</option>
+                        <option value="professional" selected>Plan Professional</option>
+                        <option value="enterprise">Plan Enterprise</option>
+                        <option value="no_seguro">No estoy seguro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <label>Detalle de Inventario (Opcional)</label>
                     <textarea id="detalle" rows="4" placeholder="Ej: Tengo 2,000 productos con lotes y 500 clientes por migrar..."></textarea>
                 </div>
 
                 <div style="margin-top: 20px;">
-                    <button type="submit" class="btn-cta" style="width: 100%;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px;">
                         Enviar Solicitud a WEB SOLUTION
                     </button>
                 </div>
+
+                <div id="formMessage" style="margin-top: 15px; text-align: center; font-size: 0.9rem; display: none;"></div>
             </form>
         </div>
     </section>
@@ -997,11 +1357,12 @@
         <div class="container">
             <p><strong>Facturación Fácil</strong> - Propiedad de Victor Porras & Pablo Cornavaca</p>
             <p style="margin: 15px 0;">Canal de Venta Exclusivo: <strong>WEB SOLUTION</strong></p>
-            <p style="font-size: 0.8rem; opacity: 0.6;">© 2026 Todos los derechos reservados. Los datos son propiedad exclusiva del Suscriptor (ToS Cláusula 4).</p>
+            <p style="font-size: 0.8rem; opacity: 0.8;">© 2026 Todos los derechos reservados. Los datos son propiedad exclusiva del Suscriptor (ToS Cláusula 4).</p>
         </div>
     </footer>
 
     <script>
+        // Form submission
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -1010,18 +1371,81 @@
             const tel = document.getElementById('telefono').value;
             const sistema = document.getElementById('sistema_origen').value;
             const sucursales = document.getElementById('sucursales').value;
+            const plan = document.getElementById('plan_interes').value;
             const detalle = document.getElementById('detalle').value;
 
+            // Validación simple
+            if (!empresa || !tel || !sistema || !sucursales) {
+                showMessage('Por favor complete todos los campos obligatorios (*)', 'error');
+                return;
+            }
+
             // Construcción del mensaje para WhatsApp
-            const mensaje = `*SOLICITUD DE DIAGNÓSTICO - WEB SOLUTION*%n` +
+            const mensaje = `*SOLICITUD DE DIAGNÓSTICO - WEB SOLUTION*%0A%0A` +
                 `*Empresa:* ${empresa}%0A` +
                 `*Teléfono:* ${tel}%0A` +
                 `*Sistema Origen:* ${sistema}%0A` +
                 `*Sucursales:* ${sucursales}%0A` +
-                `*Detalles:* ${detalle}`;
+                `*Plan de interés:* ${plan}%0A` +
+                `*Detalles:* ${detalle || 'No especificado'}`;
 
-            // Abrir WhatsApp de Pablo (85273135)
-            window.open(`https://wa.me/50585273135?text=${mensaje}`, '_blank');
+            // Mostrar mensaje de éxito
+            showMessage('¡Solicitud enviada! Redirigiendo a WhatsApp...', 'success');
+
+            // Abrir WhatsApp después de un breve retraso
+            setTimeout(() => {
+                window.open(`https://wa.me/50585273135?text=${mensaje}`, '_blank');
+                // Limpiar formulario
+                document.getElementById('contactForm').reset();
+            }, 1500);
+        });
+
+        function showMessage(text, type) {
+            const messageEl = document.getElementById('formMessage');
+            messageEl.textContent = text;
+            messageEl.style.color = type === 'success' ? 'var(--green-success)' : 'var(--danger)';
+            messageEl.style.display = 'block';
+
+            setTimeout(() => {
+                messageEl.style.display = 'none';
+            }, 5000);
+        }
+
+        // Scroll suave para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animación al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos con clase fade-in
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
