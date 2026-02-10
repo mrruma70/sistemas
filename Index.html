@@ -727,6 +727,58 @@
         .delay-2 { animation-delay: 0.2s; opacity: 0; }
         .delay-3 { animation-delay: 0.3s; opacity: 0; }
         .delay-4 { animation-delay: 0.4s; opacity: 0; }
+
+
+        /* Videos*/
+
+        .video-section {
+            padding: 80px 5%;
+            background: var(--bg-light);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .video-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+            .video-card:hover {
+                transform: translateY(-5px);
+            }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación 16:9 */
+            height: 0;
+        }
+
+            .video-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+        .video-info {
+            padding: 15px;
+        }
+
+            .video-info h4 {
+                color: var(--primary);
+                font-size: 1.1rem;
+                margin-bottom: 5px;
+            }
     </style>
 </head>
 <body>
@@ -830,6 +882,89 @@
                     <p class="value-text">Recuperación de cartera y flujo de caja saludable.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="video-section" id="tutoriales">
+        <div style="text-align: center;">
+            <h2 style="font-size: 2.5rem; color: var(--primary);">Centro de Capacitación</h2>
+            <p>Aprende a dominar Facturación Fácil en pocos minutos</p>
+        </div>
+
+        <div class="video-grid">
+            <div class="video-card fade-in">
+                <div class="video-container">
+                    <iframe src="https://www.youtube-nocookie.com/embed/VnDSfte3s8c"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h4>Introducción al Sistema</h4>
+                </div>
+            </div>
+
+            <div class="video-card fade-in">
+                <div class="video-container">
+                    <iframe src="https://www.youtube-nocookie.com/embed/c9ZH0Kqp4xA"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h4>Gestión de Ventas</h4>
+                </div>
+            </div>
+
+            <div class="video-card fade-in">
+                <div class="video-container">
+                    <iframe src="https://www.youtube-nocookie.com/embed/paJXxJE_UCc"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h4>Gestión de Devoluciones Clientes</h4>
+                </div>
+            </div>
+
+            <div class="video-card fade-in">
+                <div class="video-container">
+                    <iframe src="https://www.youtube-nocookie.com/embed/nH0LkIH9VTQ"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h4>Gestión de Cotizaciones</h4>
+                </div>
+            </div>
+
+            <div class="video-card fade-in">
+                <div class="video-container">
+                    <iframe src="https://www.youtube-nocookie.com/embed/CnXEgc8hw6I"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h4>Gestión de Compras</h4>
+                </div>
+            </div>
+
+            <div class="video-card fade-in">
+                <div class="video-container">
+                    <iframe src="https://www.youtube-nocookie.com/embed/RHPQvS6ZUYw"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h4>Gestión de Cajas y Cierre</h4>
+                </div>
+            </div>
+
+      
         </div>
     </section>
 
@@ -1443,4 +1578,5 @@
     </script>
 </body>
 </html>
+
 
