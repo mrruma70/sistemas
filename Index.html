@@ -885,6 +885,54 @@
         </div>
     </section>
 
+
+    <section class="features-extra" style="padding: 80px 0; background: var(--white);">
+        <div class="container">
+            <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
+
+                <div class="carousel-container" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                    <div class="carousel-slide">
+                        <img src="img/dash01.png" alt="Dashboard Consola de Mando" style="width: 100%; display: block;">
+                        <img src="img/dash02.png" alt="Análisis Ejecutivo" style="width: 100%; display: none;">
+                        <img src="img/dash03.png" alt="Facturacion" style="width: 100%; display: none;">
+                        <img src="img/dash04.png" alt="Voucher" style="width: 100%; display: none;">
+                        <img src="img/dash05.png" alt="CorteX" style="width: 100%; display: none;">
+                    </div>
+                    <div class="carousel-dots" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px;">
+                        <span class="dot active" onclick="currentSlide(0)" style="height: 12px; width: 12px; background: var(--blue-accent); border-radius: 50%; cursor: pointer;"></span>
+                        <span class="dot" onclick="currentSlide(1)" style="height: 12px; width: 12px; background: #ccc; border-radius: 50%; cursor: pointer;"></span>
+                        <span class="dot" onclick="currentSlide(2)" style="height: 12px; width: 12px; background: #ccc; border-radius: 50%; cursor: pointer;"></span>
+                        <span class="dot" onclick="currentSlide(3)" style="height: 12px; width: 12px; background: #ccc; border-radius: 50%; cursor: pointer;"></span>
+                        <span class="dot" onclick="currentSlide(4)" style="height: 12px; width: 12px; background: #ccc; border-radius: 50%; cursor: pointer;"></span>
+                    </div>
+                </div>
+
+                <div class="content-text">
+                    <h2 style="font-family: 'Poppins'; font-weight: 800; font-size: 2.5rem; color: var(--primary); margin-bottom: 24px;">Agilidad sin límites y Resiliencia Total</h2>
+
+                    <div class="feature-item" style="margin-bottom: 20px;">
+                        <h3 style="color: var(--blue-accent); font-weight: 700;"><i class="fas fa-bolt"></i> Alta Rápida en Facturación</h3>
+                        <p>Uno de nuestros mayores fuertes: registre productos nuevos directamente desde la pantalla de facturación para ventas inmediatas. Sin trabas de listas de precios ni necesidad de existencias previas por compras. ¡Venda al instante!</p>
+                    </div>
+
+                    <div class="feature-item" style="margin-bottom: 20px;">
+                        <h3 style="color: var(--blue-accent); font-weight: 700;"><i class="fas fa-shield-alt"></i> Modo Borrador Anti-Incidencias</h3>
+                        <p>No tema a los cortes de luz o pérdida de internet. Nuestra función de <strong>Borrador Automático</strong> permite recuperar cualquier factura o movimiento de inventario. Continúe exactamente donde quedó, protegiendo su tiempo y sus datos.</p>
+                    </div>
+
+                    <div class="feature-item" style="margin-bottom: 20px;">
+                        <h3 style="color: var(--blue-accent); font-weight: 700;"><i class="fas fa-truck-loading"></i> Control Avanzado</h3>
+                        <p>Gestione depósitos en tránsito y movimientos logísticos con precisión quirúrgica desde una sola plataforma.</p>
+                    </div>
+
+                    <p style="font-style: italic; color: var(--text-main); font-weight: 600; margin-top: 30px;">
+                        ✨ Y muchas más funcionalidades diseñadas para la gestión eficiente que su negocio merece.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="video-section" id="tutoriales">
         <div style="text-align: center;">
             <h2 style="font-size: 2.5rem; color: var(--primary);">Centro de Capacitación</h2>
@@ -964,7 +1012,7 @@
                 </div>
             </div>
 
-      
+
         </div>
     </section>
 
@@ -1576,7 +1624,30 @@
             observer.observe(el);
         });
     </script>
+    <script>
+        let currentIdx = 0;
+        const images = document.querySelectorAll('.carousel-slide img');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            images.forEach((img, i) => {
+                img.style.display = i === index ? 'block' : 'none';
+                dots[i].style.background = i === index ? 'var(--blue-accent)' : '#ccc';
+            });
+        }
+
+        function autoRotate() {
+            currentIdx = (currentIdx + 1) % images.length;
+            showSlide(currentIdx);
+        }
+
+        // Rotar cada 5 segundos
+        setInterval(autoRotate, 5000);
+
+        function currentSlide(index) {
+            currentIdx = index;
+            showSlide(currentIdx);
+        }
+    </script>
 </body>
 </html>
-
-
