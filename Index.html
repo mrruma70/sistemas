@@ -164,6 +164,173 @@
       .price-card.popular { transform: scale(1); order: -1; margin-bottom: 1rem; }
       h1 { font-size: 2.2rem; }
     }
+
+      /* 🎬 TRAINING GRID */
+      .training-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 1.2rem;
+          margin-top: 1rem;
+      }
+
+      .training-item {
+          background: var(--white);
+          padding: 1.8rem 1.2rem;
+          border-radius: var(--radius);
+          box-shadow: var(--shadow);
+          cursor: pointer;
+          transition: var(--transition);
+          text-align: center;
+          border: 2px solid transparent;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+
+          .training-item:hover {
+              transform: translateY(-4px);
+              border-color: var(--primary);
+              box-shadow: var(--shadow-lg);
+              background: #EFF6FF;
+          }
+
+          .training-item h4 {
+              margin: 0.4rem 0 0.8rem;
+              font-size: 1rem;
+              color: var(--dark);
+              font-weight: 600;
+          }
+
+      .play-btn {
+          background: var(--primary);
+          color: white;
+          padding: 0.4rem 1rem;
+          border-radius: 50px;
+          font-size: 0.8rem;
+          font-weight: 600;
+          transition: var(--transition);
+      }
+
+      .training-item:hover .play-btn {
+          background: var(--primary-dark);
+      }
+
+      /* 🎬 VIDEO MODAL - ESENCIAL PARA QUE FUNCIONE */
+      .video-modal {
+          position: fixed;
+          inset: 0;
+          z-index: 9999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+          /* ESTADO INICIAL: OCULTO */
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          transition: opacity 0.25s ease, visibility 0.25s ease;
+      }
+          /* ESTADO ACTIVO: VISIBLE */
+          .video-modal.is-open {
+              opacity: 1;
+              visibility: visible;
+              pointer-events: auto;
+          }
+
+      .video-modal-backdrop {
+          position: absolute;
+          inset: 0;
+          background: rgba(15, 23, 42, 0.92);
+          backdrop-filter: blur(6px);
+      }
+
+      .video-modal-content {
+          position: relative;
+          background: var(--white);
+          border-radius: var(--radius);
+          width: 100%;
+          max-width: 960px;
+          max-height: 90vh;
+          overflow: hidden;
+          box-shadow: var(--shadow-lg);
+          z-index: 1;
+          display: flex;
+          flex-direction: column;
+      }
+
+      .video-modal-close {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          background: var(--dark);
+          color: white;
+          border: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          font-size: 1.8rem;
+          font-weight: 300;
+          cursor: pointer;
+          z-index: 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          line-height: 1;
+          transition: var(--transition);
+      }
+
+          .video-modal-close:hover {
+              background: var(--accent);
+              color: var(--dark);
+              transform: rotate(90deg);
+          }
+
+      .video-modal-header {
+          padding: 1rem 1.5rem;
+          background: var(--gray-light);
+          font-weight: 600;
+          color: var(--dark);
+          font-size: 1.1rem;
+          border-bottom: 1px solid #E2E8F0;
+          text-align: center;
+      }
+
+      .video-embed-container {
+          position: relative;
+          padding-bottom: 56.25%; /* Ratio 16:9 */
+          height: 0;
+          background: #000;
+      }
+
+          .video-embed-container iframe {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              border: 0;
+          }
+
+      /* 📱 Responsive */
+      @media (max-width: 768px) {
+          .training-grid {
+              grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+              gap: 0.9rem;
+          }
+
+          .training-item {
+              padding: 1.4rem 0.8rem;
+          }
+
+              .training-item h4 {
+                  font-size: 0.9rem;
+              }
+
+          .video-modal-content {
+              max-width: 100%;
+              margin: 0.5rem;
+          }
+      }
   </style>
 </head>
 <body>
@@ -257,68 +424,57 @@
     </section>
 
     <!-- CAPACITACIÓN -->
-    <!-- CAPACITACIÓN CON VIDEOS MODAL -->
+    <!-- CAPACITACIÓN CON VIDEOS FUNCIONALES -->
     <section class="section section-alt" id="tutoriales">
         <div class="container">
             <h2 class="fade-in">Centro de Capacitación</h2>
             <p class="text-center mb-4 fade-in">Domine el sistema en minutos. Recursos siempre disponibles.</p>
 
             <div class="training-grid">
-                <!-- Video 1 -->
-                <div class="training-item fade-in" data-video-id="VnDSfte3s8c" data-video-title="Introducción al Sistema">
-                    <span style="font-size: 2rem;">📖</span>
+                <div class="training-item fade-in" data-video-id="VnDSfte3s8c" data-video-title="📖 Introducción al Sistema">
+                    <span style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎬</span>
                     <h4>Introducción</h4>
-                    <span class="play-badge">▶ Ver</span>
+                    <span class="play-btn">▶ Reproducir</span>
                 </div>
-
-                <!-- Video 2 -->
-                <div class="training-item fade-in" data-video-id="c9ZH0Kqp4xA" data-video-title="Gestión de Ventas">
-                    <span style="font-size: 2rem;">🛒</span>
+                <div class="training-item fade-in" data-video-id="c9ZH0Kqp4xA" data-video-title="🛒 Gestión de Ventas">
+                    <span style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎬</span>
                     <h4>Gestión de Ventas</h4>
-                    <span class="play-badge">▶ Ver</span>
+                    <span class="play-btn">▶ Reproducir</span>
                 </div>
-
-                <!-- Video 3 -->
-                <div class="training-item fade-in" data-video-id="paJXxJE_UCc" data-video-title="Devoluciones">
-                    <span style="font-size: 2rem;">🔄</span>
+                <div class="training-item fade-in" data-video-id="paJXxJE_UCc" data-video-title="🔄 Devoluciones">
+                    <span style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎬</span>
                     <h4>Devoluciones</h4>
-                    <span class="play-badge">▶ Ver</span>
+                    <span class="play-btn">▶ Reproducir</span>
                 </div>
-
-                <!-- Video 4 -->
-                <div class="training-item fade-in" data-video-id="nH0LkIH9VTQ" data-video-title="Cotizaciones">
-                    <span style="font-size: 2rem;">📝</span>
+                <div class="training-item fade-in" data-video-id="nH0LkIH9VTQ" data-video-title="📝 Cotizaciones">
+                    <span style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎬</span>
                     <h4>Cotizaciones</h4>
-                    <span class="play-badge">▶ Ver</span>
+                    <span class="play-btn">▶ Reproducir</span>
                 </div>
-
-                <!-- Video 5 -->
-                <div class="training-item fade-in" data-video-id="CnXEgc8hw6I" data-video-title="Compras">
-                    <span style="font-size: 2rem;">📥</span>
-                    <h4>Gestión de Compras</h4>
-                    <span class="play-badge">▶ Ver</span>
+                <div class="training-item fade-in" data-video-id="CnXEgc8hw6I" data-video-title="📥 Gestión de Compras">
+                    <span style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎬</span>
+                    <h4>Compras</h4>
+                    <span class="play-btn">▶ Reproducir</span>
                 </div>
-
-                <!-- Video 6 -->
-                <div class="training-item fade-in" data-video-id="RHPQvS6ZUYw" data-video-title="Cajas y Cierre">
-                    <span style="font-size: 2rem;">💰</span>
+                <div class="training-item fade-in" data-video-id="RHPQvS6ZUYw" data-video-title="💰 Cajas y Cierre">
+                    <span style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎬</span>
                     <h4>Cajas y Cierre</h4>
-                    <span class="play-badge">▶ Ver</span>
+                    <span class="play-btn">▶ Reproducir</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MODAL DE VIDEO (Fuera del flujo principal) -->
-    <div id="videoModal" class="video-modal" aria-hidden="true">
+    <!-- ✅ MODAL DE VIDEO (COPIA ESTO AL FINAL DE TU <body>, ANTES DE </body>) -->
+    <div id="videoModal" class="video-modal" role="dialog" aria-modal="true" aria-hidden="true">
         <div class="video-modal-content">
             <button class="video-modal-close" aria-label="Cerrar video">&times;</button>
-            <div class="video-modal-title" id="modalVideoTitle"></div>
-            <div class="video-wrapper">
-                <iframe id="modalVideoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-modal-header" id="modalVideoTitle">Título del Video</div>
+            <div class="video-embed-container">
+                <iframe id="modalVideoFrame" src="" title="Video de capacitación" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>
-        <div class="video-modal-overlay"></div>
+        <div class="video-modal-backdrop"></div>
     </div>
 
     <!-- PRECIOS -->
@@ -545,6 +701,87 @@
                     window.scrollTo({ top: pos, behavior: 'smooth' });
                 }
             });
+        });
+
+        // 🎬 SISTEMA DE VIDEOS MODAL - PROBADO Y FUNCIONAL
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const modal = document.getElementById('videoModal');
+            const modalFrame = document.getElementById('modalVideoFrame');
+            const modalTitle = document.getElementById('modalVideoTitle');
+            const closeBtn = document.querySelector('.video-modal-close');
+            const backdrop = document.querySelector('.video-modal-backdrop');
+
+            // Función para abrir el modal
+            function openVideo(videoId, videoTitle) {
+                // Actualizar título
+                modalTitle.textContent = videoTitle;
+
+                // Cargar video con parámetros optimizados (privacidad + sin sugerencias)
+                modalFrame.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+
+                // Mostrar modal
+                modal.classList.add('is-open');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden'; // Evitar scroll de fondo
+
+                // Accesibilidad: enfocar botón de cerrar
+                setTimeout(() => closeBtn.focus(), 100);
+            }
+
+            // Función para cerrar el modal
+            function closeVideo() {
+                modal.classList.remove('is-open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+
+                // Detener video: limpiar src para liberar recursos
+                setTimeout(() => {
+                    modalFrame.src = '';
+                }, 250);
+            }
+
+            // Event listeners para las tarjetas de video
+            document.querySelectorAll('.training-item').forEach(card => {
+                card.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const videoId = this.dataset.videoId;
+                    const videoTitle = this.dataset.videoTitle;
+
+                    if (videoId) {
+                        openVideo(videoId, videoTitle);
+                    }
+                });
+
+                // Soporte para teclado (Enter/Space)
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('role', 'button');
+                card.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+
+            // Cerrar modal con botón X
+            closeBtn.addEventListener('click', closeVideo);
+
+            // Cerrar modal al hacer clic en el backdrop
+            backdrop.addEventListener('click', closeVideo);
+
+            // Cerrar con tecla Escape
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+                    closeVideo();
+                }
+            });
+
+            // Prevenir que el clic dentro del contenido cierre el modal
+            document.querySelector('.video-modal-content').addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+
         });
     </script>
 </body>
