@@ -102,7 +102,8 @@
     .discount { color: var(--success); font-weight: 600; font-size: 0.85rem; margin-top: 0.6rem; display: block; }
     .price-features { margin: 1.5rem 0; flex: 1; }
     .price-features li { padding: 0.6rem 0; border-bottom: 1px solid #F8FAFC; display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem; }
-    .initial-fee { background: #F8FAFC; padding: 0.9rem; border-radius: 8px; text-align: center; margin-bottom: 1.5rem; font-size: 0.85rem; font-weight: 600; color: var(--dark-light); }
+    .initial-fee { background: #F8FAFC; padding: 0.9rem; border-radius: 8px; text-align: center; margin-bottom: 1rem; font-size: 0.85rem; font-weight: 600; color: var(--dark-light); }
+    .addon-note { background: #EFF6FF; padding: 0.6rem; border-radius: 6px; text-align: center; margin: 1rem 0 0.5rem; font-size: 0.8rem; font-weight: 600; color: var(--primary-dark); border-left: 3px solid var(--primary); }
     .price-comparison { text-align: center; margin-top: 2rem; color: var(--gray); font-size: 0.9rem; font-style: italic; }
 
     /* 📊 MATRIZ COMPARATIVA */
@@ -165,172 +166,153 @@
       h1 { font-size: 2.2rem; }
     }
 
-      /* 🎬 TRAINING GRID */
-      .training-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-          gap: 1.2rem;
-          margin-top: 1rem;
-      }
+    /* 🎬 TRAINING GRID */
+    .training-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.2rem;
+        margin-top: 1rem;
+    }
+    .training-item {
+        background: var(--white);
+        padding: 1.8rem 1.2rem;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        cursor: pointer;
+        transition: var(--transition);
+        text-align: center;
+        border: 2px solid transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .training-item:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary);
+        box-shadow: var(--shadow-lg);
+        background: #EFF6FF;
+    }
+    .training-item h4 {
+        margin: 0.4rem 0 0.8rem;
+        font-size: 1rem;
+        color: var(--dark);
+        font-weight: 600;
+    }
+    .play-btn {
+        background: var(--primary);
+        color: white;
+        padding: 0.4rem 1rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        transition: var(--transition);
+    }
+    .training-item:hover .play-btn {
+        background: var(--primary-dark);
+    }
 
-      .training-item {
-          background: var(--white);
-          padding: 1.8rem 1.2rem;
-          border-radius: var(--radius);
-          box-shadow: var(--shadow);
-          cursor: pointer;
-          transition: var(--transition);
-          text-align: center;
-          border: 2px solid transparent;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-      }
-
-          .training-item:hover {
-              transform: translateY(-4px);
-              border-color: var(--primary);
-              box-shadow: var(--shadow-lg);
-              background: #EFF6FF;
-          }
-
-          .training-item h4 {
-              margin: 0.4rem 0 0.8rem;
-              font-size: 1rem;
-              color: var(--dark);
-              font-weight: 600;
-          }
-
-      .play-btn {
-          background: var(--primary);
-          color: white;
-          padding: 0.4rem 1rem;
-          border-radius: 50px;
-          font-size: 0.8rem;
-          font-weight: 600;
-          transition: var(--transition);
-      }
-
-      .training-item:hover .play-btn {
-          background: var(--primary-dark);
-      }
-
-      /* 🎬 VIDEO MODAL - ESENCIAL PARA QUE FUNCIONE */
-      .video-modal {
-          position: fixed;
-          inset: 0;
-          z-index: 9999;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 1rem;
-          /* ESTADO INICIAL: OCULTO */
-          opacity: 0;
-          visibility: hidden;
-          pointer-events: none;
-          transition: opacity 0.25s ease, visibility 0.25s ease;
-      }
-          /* ESTADO ACTIVO: VISIBLE */
-          .video-modal.is-open {
-              opacity: 1;
-              visibility: visible;
-              pointer-events: auto;
-          }
-
-      .video-modal-backdrop {
-          position: absolute;
-          inset: 0;
-          background: rgba(15, 23, 42, 0.92);
-          backdrop-filter: blur(6px);
-      }
-
-      .video-modal-content {
-          position: relative;
-          background: var(--white);
-          border-radius: var(--radius);
-          width: 100%;
-          max-width: 960px;
-          max-height: 90vh;
-          overflow: hidden;
-          box-shadow: var(--shadow-lg);
-          z-index: 1;
-          display: flex;
-          flex-direction: column;
-      }
-
-      .video-modal-close {
-          position: absolute;
-          top: 1rem;
-          right: 1rem;
-          background: var(--dark);
-          color: white;
-          border: none;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          font-size: 1.8rem;
-          font-weight: 300;
-          cursor: pointer;
-          z-index: 2;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          line-height: 1;
-          transition: var(--transition);
-      }
-
-          .video-modal-close:hover {
-              background: var(--accent);
-              color: var(--dark);
-              transform: rotate(90deg);
-          }
-
-      .video-modal-header {
-          padding: 1rem 1.5rem;
-          background: var(--gray-light);
-          font-weight: 600;
-          color: var(--dark);
-          font-size: 1.1rem;
-          border-bottom: 1px solid #E2E8F0;
-          text-align: center;
-      }
-
-      .video-embed-container {
-          position: relative;
-          padding-bottom: 56.25%; /* Ratio 16:9 */
-          height: 0;
-          background: #000;
-      }
-
-          .video-embed-container iframe {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              border: 0;
-          }
-
-      /* 📱 Responsive */
-      @media (max-width: 768px) {
-          .training-grid {
-              grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-              gap: 0.9rem;
-          }
-
-          .training-item {
-              padding: 1.4rem 0.8rem;
-          }
-
-              .training-item h4 {
-                  font-size: 0.9rem;
-              }
-
-          .video-modal-content {
-              max-width: 100%;
-              margin: 0.5rem;
-          }
-      }
+    /* 🎬 VIDEO MODAL - ESENCIAL PARA QUE FUNCIONE */
+    .video-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    .video-modal.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    .video-modal-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.92);
+        backdrop-filter: blur(6px);
+    }
+    .video-modal-content {
+        position: relative;
+        background: var(--white);
+        border-radius: var(--radius);
+        width: 100%;
+        max-width: 960px;
+        max-height: 90vh;
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .video-modal-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: var(--dark);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 1.8rem;
+        font-weight: 300;
+        cursor: pointer;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        transition: var(--transition);
+    }
+    .video-modal-close:hover {
+        background: var(--accent);
+        color: var(--dark);
+        transform: rotate(90deg);
+    }
+    .video-modal-header {
+        padding: 1rem 1.5rem;
+        background: var(--gray-light);
+        font-weight: 600;
+        color: var(--dark);
+        font-size: 1.1rem;
+        border-bottom: 1px solid #E2E8F0;
+        text-align: center;
+    }
+    .video-embed-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        background: #000;
+    }
+    .video-embed-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+    @media (max-width: 768px) {
+        .training-grid {
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.9rem;
+        }
+        .training-item {
+            padding: 1.4rem 0.8rem;
+        }
+        .training-item h4 {
+            font-size: 0.9rem;
+        }
+        .video-modal-content {
+            max-width: 100%;
+            margin: 0.5rem;
+        }
+    }
   </style>
 </head>
 <body>
@@ -409,6 +391,116 @@
         </div>
     </section>
 
+    <!-- NUEVOS MÓDULOS POS ESPECIALIZADOS -->
+    <section id="pos-verticales" class="section" style="background: linear-gradient(135deg, #EFF6FF, #FFFFFF);">
+        <div class="container">
+            <h2 class="fade-in">📌 POS Especializados por Tipo de Negocio</h2>
+            <p class="text-center mb-4 fade-in">No importa si vendes al por menor, reparas vehículos o sirves comidas: tenemos la versión exacta que necesitas.</p>
+            <div class="grid-3">
+                <div class="card fade-in">
+                    <div class="card-icon">🛒</div>
+                    <h3>Mini Súper & Tiendas</h3>
+                    <ul>
+                        <li>Facturación ultrarrápida con código de barras.</li>
+                        <li>Control de lotes y fechas de vencimiento (lácteos, embutidos, medicamentos, etc.).</li>
+                        <li>Múltiples listas de precios: mayorista, promociones, ofertas por temporada.</li>
+                        <li>Gestión de clientes frecuentes y puntos de fidelidad.</li>
+                    </ul>
+                    <div class="strategic-value">✅ Cierre de caja en minutos, cero mermas ocultas.</div>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">🔧</div>
+                    <h3>Talleres Eléctricos & Mecánicos</h3>
+                    <ul>
+                        <li>Orden de Trabajo (OTS) → Factura: seguimiento completo del servicio.</li>
+                        <li>Control de repuestos (salida de inventario automática) y mano de obra.</li>
+                        <li>Presupuestos digitales que se convierten en factura con un clic.</li>
+                    </ul>
+                    <div class="strategic-value">✅ Evita olvidos y duplicidad: todo integrado en una sola plataforma.</div>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">🍽️</div>
+                    <h3>Comedores & Comidas Rápidas</h3>
+                    <ul>
+                        <li>Menús visuales por categorías ágiles (desayunos, almuerzos, bebidas).</li>
+                        <li>Ventas a empleados con cargo a nómina (autogestión por código).</li>
+                        <li>Control automático de la Categoría Favoritos, en base a los más vendido los últimos 30 días.</li>
+                    </ul>
+                    <div class="strategic-value">✅ Servicio más rápido, inventario optimizado y diferenciación por tipo de cliente (Mostrador/Empleados).</div>
+                </div>
+            </div>
+            <div class="text-center mt-2 fade-in">
+                <a href="#diagnostico" class="btn btn-accent" style="padding: 0.9rem 2rem;">🎯 Solicitar demo del POS para tu giro</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CONTABILIDAD INTEGRADA (Módulo adicional) -->
+    <section class="section" style="background: linear-gradient(135deg, #F8FAFC, #FFFFFF);">
+        <div class="container">
+            <h2 class="fade-in">📊 Contabilidad Integrada en Tiempo Real</h2>
+            <p class="text-center mb-4 fade-in">Olvídate de la doble digitación. Cada transacción en inventarios, ventas y caja se registra automáticamente en tu plan contable.</p>
+            <div class="grid-3">
+                <div class="card fade-in">
+                    <div class="card-icon">🔄</div>
+                    <h3>Sincronización Automática</h3>
+                    <ul>
+                        <li>✅ Facturas de venta → Cuentas por cobrar + Ingresos.</li>
+                        <li>✅ Compras → Cuentas por pagar + Costo de venta.</li>
+                        <li>✅ Movimientos de caja → Libro diario de efectivo.</li>
+                        <li>✅ Ajustes de inventario → Cuentas de resultado.</li>
+                    </ul>
+                    <div class="strategic-value">📌 Sin errores de traslado. Información financiera confiable al instante.</div>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">⚙️</div>
+                    <h3>Plan Contable Personalizable</h3>
+                    <ul>
+                        <li>Catálogo de cuentas flexible, adaptable a Nicaragua (NIC 32).</li>
+                        <li>Asignación de cuentas contables por tipo de movimiento, producto y cliente.</li>
+                        <li>Centros de costo por sucursal o proyecto.</li>
+                    </ul>
+                    <div class="strategic-value">📌 Contabilidad que se adapta a tu negocio, no al revés.</div>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">📈</div>
+                    <h3>Reportes Financieros al Día</h3>
+                    <ul>
+                        <li>Balance General y Estado de Resultados en tiempo real.</li>
+                        <li>Mayor analítico por cuenta, centro de costo y período.</li>
+                        <li>Libro Diario y Mayor con trazabilidad hasta el documento fuente.</li>
+                    </ul>
+                    <div class="strategic-value">📌 Toma decisiones con información actualizada al minuto.</div>
+                </div>
+            </div>
+            <!-- PRÓXIMAS FUNCIONALIDADES -->
+            <div class="migration-box mt-2 fade-in" style="background: linear-gradient(135deg, #EFF6FF, #FFFFFF); border-color: #2563EB;">
+                <h3 style="color: var(--dark);">🔜 Próximamente en Facturación Fácil</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between; margin-top: 1rem;">
+                    <div style="flex: 1; min-width: 200px;">
+                        <span style="font-size: 2rem;">🏦</span>
+                        <h4 style="margin: 0.5rem 0 0.2rem;">Conciliaciones Bancarias</h4>
+                        <p style="font-size: 0.9rem;">Carga de extractos, emparejamiento automático de movimientos y diferencias controladas.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px;">
+                        <span style="font-size: 2rem;">📑</span>
+                        <h4 style="margin: 0.5rem 0 0.2rem;">Cuentas por Pagar (CXP)</h4>
+                        <p style="font-size: 0.9rem;">Gestión de compras a crédito, programación de pagos a proveedores y flujo de caja proyectado.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px;">
+                        <span style="font-size: 2rem;">📎</span>
+                        <h4 style="margin: 0.5rem 0 0.2rem;">Facturación Electrónica</h4>
+                        <p style="font-size: 0.9rem;">Integración con DGI (Nicaragua) para emisión y envío de documentos fiscales.</p>
+                    </div>
+                </div>
+                <p class="text-center mt-2" style="font-weight: 600; color: var(--primary);">✨ Estas mejoras llegarán sin costo adicional para suscriptores activos.</p>
+            </div>
+            <div class="text-center mt-2 fade-in">
+                <a href="#diagnostico" class="btn btn-primary" style="padding: 0.9rem 2rem;">📌 Solicitar Demo Contable</a>
+            </div>
+        </div>
+    </section>
+
     <!-- DESTACADOS -->
     <section class="section">
         <div class="container">
@@ -423,13 +515,11 @@
         </div>
     </section>
 
-    <!-- CAPACITACIÓN -->
-    <!-- CAPACITACIÓN CON VIDEOS FUNCIONALES -->
+    <!-- CAPACITACIÓN CON VIDEOS -->
     <section class="section section-alt" id="tutoriales">
         <div class="container">
             <h2 class="fade-in">Centro de Capacitación</h2>
             <p class="text-center mb-4 fade-in">Domine el sistema en minutos. Recursos siempre disponibles.</p>
-
             <div class="training-grid">
                 <div class="training-item fade-in" data-video-id="VnDSfte3s8c" data-video-title="📖 Introducción al Sistema">
                     <span style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎬</span>
@@ -465,7 +555,7 @@
         </div>
     </section>
 
-    <!-- ✅ MODAL DE VIDEO (COPIA ESTO AL FINAL DE TU <body>, ANTES DE </body>) -->
+    <!-- MODAL DE VIDEO -->
     <div id="videoModal" class="video-modal" role="dialog" aria-modal="true" aria-hidden="true">
         <div class="video-modal-content">
             <button class="video-modal-close" aria-label="Cerrar video">&times;</button>
@@ -477,7 +567,7 @@
         <div class="video-modal-backdrop"></div>
     </div>
 
-    <!-- PRECIOS -->
+    <!-- PRECIOS (con módulo de contabilidad como adicional) -->
     <section id="planes" class="section">
         <div class="container">
             <h2 class="fade-in">Planes de Suscripción</h2>
@@ -495,9 +585,10 @@
                         <li>✅ Soporte vía Ticket</li>
                     </ul>
                     <div class="initial-fee">💵 Inversión inicial: $80 – $120 (único)</div>
+                    <div class="addon-note">➕ Módulo de Contabilidad Integrada: <strong>+$30/mes</strong> (opcional)</div>
                     <a href="#diagnostico" class="btn btn-primary btn-block">Seleccionar Basic</a>
                 </div>
-                <!-- Professional -->
+                <!-- Professional (más popular) -->
                 <div class="price-card popular fade-in">
                     <div class="popular-badge">🔥 MÁS POPULAR</div>
                     <div class="price-header"><h3>Professional</h3><div class="price">$120 <span>/trimestral</span></div><span class="discount">Semestral: $228.00 | Anual: $432.00</span></div>
@@ -510,6 +601,7 @@
                         <li>✅ Soporte Remoto Estándar</li>
                     </ul>
                     <div class="initial-fee">💵 Inversión inicial: $150 – $250 (único)</div>
+                    <div class="addon-note">➕ Módulo de Contabilidad Integrada: <strong>+$30/mes</strong> (opcional)</div>
                     <a href="#diagnostico" class="btn btn-accent btn-block">Seleccionar Pro</a>
                 </div>
                 <!-- Enterprise -->
@@ -524,21 +616,24 @@
                         <li>✅ Soporte Prioritario 24/7</li>
                     </ul>
                     <div class="initial-fee">💵 Inversión: Según complejidad</div>
+                    <div class="addon-note">➕ Módulo de Contabilidad Multiempresa: <strong>+$60/mes</strong> (opcional)</div>
                     <a href="#diagnostico" class="btn btn-primary btn-block">Seleccionar Enterprise</a>
                 </div>
             </div>
-            <p class="price-comparison fade-in">* Soluciones similares en el mercado: $50 – $150/mes. Aquí pagas solo lo necesario.</p>
+            <p class="price-comparison fade-in">* Los precios base son por suscripción trimestral. El módulo de contabilidad se factura <strong>mensualmente aparte</strong> y solo se activa si el cliente lo solicita.</p>
         </div>
     </section>
 
-    <!-- MATRIZ -->
+    <!-- MATRIZ COMPARATIVA (con contabilidad destacada) -->
     <section id="matriz" class="section section-alt">
         <div class="container">
             <h2 class="fade-in">Matriz de Funcionalidades por Plan</h2>
             <p class="text-center mb-4 fade-in">Compare las capacidades y elija el que mejor se adapta a su negocio.</p>
             <div class="table-wrapper fade-in">
                 <table>
-                    <thead><tr><th>Funcionalidad / Capacidad</th><th>Plan Basic</th><th>Plan Professional</th><th>Plan Enterprise</th></tr></thead>
+                    <thead>
+                        <tr><th>Funcionalidad / Capacidad</th><th>Plan Basic</th><th>Plan Professional</th><th>Plan Enterprise</th></tr>
+                    </thead>
                     <tbody>
                         <tr><td>Usuarios Incluidos</td><td>Hasta 2</td><td>Hasta 10</td><td>Hasta 50</td></tr>
                         <tr><td>Ventas al Crédito (CxC)</td><td><span class="cross">✘</span> Solo contado</td><td><span class="check">✔</span> Completo</td><td><span class="check">✔</span> Completo</td></tr>
@@ -547,10 +642,17 @@
                         <tr><td>Multisucursal</td><td><span class="cross">✘</span> 1 fija</td><td><span class="check">✔</span> 3 sucursales</td><td><span class="check">✔</span> 3 x Empresa</td></tr>
                         <tr><td>Auditoría y Roles</td><td>Básica</td><td>Parcial</td><td>Completa</td></tr>
                         <tr><td>Hospedaje Cloud y Respaldo</td><td><span class="check">✔</span> Incluido</td><td><span class="check">✔</span> Incluido</td><td><span class="check">✔</span> Incluido</td></tr>
+                        <tr><td>POS Especializado</td><td><span class="cross">✘</span> Estándar</td><td><span class="check">✔</span> Mini-Súper / Tiendas / Comedor</td><td><span class="check">✔</span> Taller + OTS / Comedor / Súper</td></tr>
+                        <tr>
+                            <td>Contabilidad Integrada</td>
+                            <td><span class="cross">✘</span> No disponible</td>
+                            <td><span class="check">✔</span> Básica (Balanza, Balance General, E.R.) <br> <strong>+$30/mes</strong></td>
+                            <td><span class="check">✔</span> Completa + Multiempresa <br> <strong>+$60/mes</strong></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
-            <p style="font-size: 0.8rem; color: var(--gray); text-align: center; margin-top: 0.5rem;">* Acceso sujeto al nivel de suscripción activa (ToS 2026). ↔ Deslice para ver en móvil.</p>
+            <p style="font-size: 0.8rem; color: var(--gray); text-align: center; margin-top: 0.5rem;">* El módulo de contabilidad es opcional y tiene un costo mensual adicional, no incluido en el precio de suscripción trimestral.</p>
         </div>
     </section>
 
@@ -620,7 +722,7 @@
         </div>
     </section>
 
-    <!-- FORMULARIO -->
+    <!-- FORMULARIO DE DIAGNÓSTICO -->
     <section id="diagnostico" class="section section-alt">
         <div class="container">
             <h2 class="fade-in">Solicitud de Diagnóstico Técnico</h2>
@@ -685,7 +787,6 @@
                 btn.innerHTML = originalText;
                 btn.disabled = false;
                 form.reset();
-                // Scroll suave al mensaje
                 formMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }, 1500);
         });
@@ -703,57 +804,37 @@
             });
         });
 
-        // 🎬 SISTEMA DE VIDEOS MODAL - PROBADO Y FUNCIONAL
+        // 🎬 SISTEMA DE VIDEOS MODAL
         document.addEventListener('DOMContentLoaded', function () {
-
             const modal = document.getElementById('videoModal');
             const modalFrame = document.getElementById('modalVideoFrame');
             const modalTitle = document.getElementById('modalVideoTitle');
             const closeBtn = document.querySelector('.video-modal-close');
             const backdrop = document.querySelector('.video-modal-backdrop');
 
-            // Función para abrir el modal
             function openVideo(videoId, videoTitle) {
-                // Actualizar título
                 modalTitle.textContent = videoTitle;
-
-                // Cargar video con parámetros optimizados (privacidad + sin sugerencias)
                 modalFrame.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
-
-                // Mostrar modal
                 modal.classList.add('is-open');
                 modal.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden'; // Evitar scroll de fondo
-
-                // Accesibilidad: enfocar botón de cerrar
+                document.body.style.overflow = 'hidden';
                 setTimeout(() => closeBtn.focus(), 100);
             }
 
-            // Función para cerrar el modal
             function closeVideo() {
                 modal.classList.remove('is-open');
                 modal.setAttribute('aria-hidden', 'true');
                 document.body.style.overflow = '';
-
-                // Detener video: limpiar src para liberar recursos
-                setTimeout(() => {
-                    modalFrame.src = '';
-                }, 250);
+                setTimeout(() => { modalFrame.src = ''; }, 250);
             }
 
-            // Event listeners para las tarjetas de video
             document.querySelectorAll('.training-item').forEach(card => {
                 card.addEventListener('click', function (e) {
                     e.preventDefault();
                     const videoId = this.dataset.videoId;
                     const videoTitle = this.dataset.videoTitle;
-
-                    if (videoId) {
-                        openVideo(videoId, videoTitle);
-                    }
+                    if (videoId) openVideo(videoId, videoTitle);
                 });
-
-                // Soporte para teclado (Enter/Space)
                 card.setAttribute('tabindex', '0');
                 card.setAttribute('role', 'button');
                 card.addEventListener('keydown', function (e) {
@@ -764,24 +845,12 @@
                 });
             });
 
-            // Cerrar modal con botón X
             closeBtn.addEventListener('click', closeVideo);
-
-            // Cerrar modal al hacer clic en el backdrop
             backdrop.addEventListener('click', closeVideo);
-
-            // Cerrar con tecla Escape
             document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-                    closeVideo();
-                }
+                if (e.key === 'Escape' && modal.classList.contains('is-open')) closeVideo();
             });
-
-            // Prevenir que el clic dentro del contenido cierre el modal
-            document.querySelector('.video-modal-content').addEventListener('click', function (e) {
-                e.stopPropagation();
-            });
-
+            document.querySelector('.video-modal-content').addEventListener('click', function (e) { e.stopPropagation(); });
         });
     </script>
 </body>
